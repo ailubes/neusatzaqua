@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-10-20T10:51:00.976Z",
+  "summary": {
+    "total": 2,
+    "passed": 1,
+    "failed": 1
+  },
+  "results": [
+    {
+      "test": "Desktop Initial View",
+      "status": "PASS",
+      "note": "Screenshot captured at 1920x1080"
+    },
+    {
+      "test": "Test Execution",
+      "status": "FAIL",
+      "note": "locator.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('nav a:has-text(\"About Us\")').first()\u001b[22m\n"
+    }
+  ],
+  "screenshotsDir": "/mnt/g/www/neusatzaqua.com/screenshots"
+}
