@@ -1,6 +1,0 @@
-{
-  "/[locale]/page": "app/[locale]/page.js",
-  "/[locale]/news/page": "app/[locale]/news/page.js",
-  "/[locale]/gender-equality/page": "app/[locale]/gender-equality/page.js",
-  "/[locale]/about/page": "app/[locale]/about/page.js"
-}
