@@ -157,8 +157,8 @@ export default function Home() {
   ];
 
   const partners = [
-    { name: t('partners.awi'), abbr: 'AWI' },
-    { name: t('partners.shrimpwiz'), abbr: 'ShrimpWiz' },
+    { name: t('partners.awi'), abbr: 'GMRN' },
+    { name: t('partners.shrimpwiz'), abbr: 'AIL' },
     { name: t('partners.horizon'), abbr: 'Horizon Europe' },
     { name: t('partners.gep'), abbr: 'GEP Certified' },
   ];

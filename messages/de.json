@@ -159,8 +159,8 @@
     "partners": {
       "title": "Vertrauenswürdige Partner & Zertifizierungen",
       "subtitle": "Zusammenarbeit mit führenden Institutionen zur Förderung von Innovation und Nachhaltigkeit in der Aquakultur.",
-      "awi": "Alfred-Wegener-Institut",
-      "shrimpwiz": "ShrimpWiz",
+      "awi": "Globales Meeresforschungsnetzwerk",
+      "shrimpwiz": "Aquaculture Insight Lab",
       "horizon": "Horizon Europe",
       "gep": "GEP-zertifiziert"
     },
@@ -284,7 +284,7 @@
       "title": "Teil von Vismar Aqua",
       "subtitle": "Stolz darauf, Teil eines innovativen Aquakultur-Ökosystems zu sein, das Forschung, Nachhaltigkeit und technologischen Fortschritt vorantreibt.",
       "description": "Vismar Aqua ist eine zukunftsorientierte Aquakultur-Organisation, die sich nachhaltiger Meeresfrüchteproduktion, KI-gesteuerten Innovationen und gemeinschaftlicher Forschung verschrieben hat. Als Teil dieses Ökosystems profitiert Neusatz Aqua von:",
-      "benefit1": "Gemeinsamen F&E-Ressourcen und wissenschaftlichen Partnerschaften mit Institutionen wie dem Alfred-Wegener-Institut (AWI)",
+      "benefit1": "Gemeinsame F&E-Ressourcen und wissenschaftliche Partnerschaften mit führenden Meeresforschungsinstituten weltweit",
       "benefit2": "Zugang zu modernster KI-Verhaltensüberwachung und Digital Twin-Technologien",
       "benefit3": "Teilnahme an EU Horizon-Projekten und Initiativen zur Geschlechtergleichstellung",
       "benefit4": "Wissensaustausch mit einem Netzwerk von Aquakultur-Experten und Innovatoren",
@@ -471,7 +471,7 @@
       },
       "international": {
         "title": "Internationale Forschungspartner",
-        "description": "Zusammenarbeit mit dem Alfred-Wegener-Institut (AWI) und anderen globalen Institutionen für KI- und Biotechnologie-Innovation."
+        "description": "Zusammenarbeit mit globalen Meeresforschungsinstituten für KI- und Biotechnologie-Innovationen."
       },
       "horizon": {
         "title": "EU Horizon-Projekte",
@@ -608,14 +608,14 @@
       "title": "Forschungspartner",
       "subtitle": "Zusammenarbeit mit weltweit führenden Institutionen zur Erweiterung der Grenzen der Aquakultur-Wissenschaft",
       "awi": {
-        "name": "Alfred-Wegener-Institut (AWI)",
-        "country": "Deutschland",
-        "description": "Polar- und Meeresforschung, Aquakultur-Innovation"
+        "name": "Globales Meeresforschungsnetzwerk",
+        "country": "Internationales Konsortium",
+        "description": "Kooperative Meeresforschungsinitiative für nachhaltige Aquakultur"
       },
       "shrimpwiz": {
-        "name": "ShrimpWiz",
-        "country": "International",
-        "description": "Garnelen-Aquakultur-Technologie und Beratung"
+        "name": "Aquaculture Insight Lab",
+        "country": "Europa",
+        "description": "Experten für Garnelen-Aquakulturtechnologie und angewandte Analysen"
       },
       "horizon": {
         "name": "Horizon Europe",
@@ -932,16 +932,16 @@
       "title": "Unsere aktuellen Partner",
       "subtitle": "Wir sind stolz darauf, mit führenden Institutionen und Organisationen zusammenzuarbeiten, die Innovation in der Aquakultur vorantreiben.",
       "awi": {
-        "name": "Alfred-Wegener-Institut (AWI)",
-        "location": "Deutschland",
-        "description": "Zusammenarbeit in der Polar- und Meeresforschung, die wissenschaftliche Expertise von Weltklasse in unsere Aquakultur-Innovationsprojekte einbringt.",
-        "focus": "Meeresbiologie & Forschung"
+        "name": "Globales Meeresforschungsnetzwerk",
+        "location": "Internationales Konsortium",
+        "description": "Zusammenarbeit mit einem weltweiten Netzwerk von Meereswissenschaftlern, das unsere Innovationsprojekte mit führender Forschungskompetenz unterstützt.",
+        "focus": "Meereswissenschaft & Forschung"
       },
       "shrimpwiz": {
-        "name": "ShrimpWiz",
-        "location": "International",
-        "description": "Technologie-Partnerschaft für KI-gestützte Garnelen-Verhaltensüberwachung und Digital Twin-Systeme in der Aquakultur.",
-        "focus": "KI & Computer Vision"
+        "name": "Aquaculture Insight Lab",
+        "location": "Europa",
+        "description": "Technologiepartnerschaft für KI-gestützte Garnelenverhaltensüberwachung und Digital-Twin-Systeme in der Aquakultur.",
+        "focus": "KI & Datenanalytik"
       },
       "horizon": {
         "name": "Horizon Europe",

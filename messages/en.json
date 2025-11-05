@@ -159,8 +159,8 @@
     "partners": {
       "title": "Trusted Partners & Certifications",
       "subtitle": "Collaborating with leading institutions to advance aquaculture innovation and sustainability.",
-      "awi": "Alfred Wegener Institute",
-      "shrimpwiz": "ShrimpWiz",
+      "awi": "Global Marine Research Network",
+      "shrimpwiz": "Aquaculture Insight Lab",
       "horizon": "Horizon Europe",
       "gep": "GEP Certified"
     },
@@ -284,7 +284,7 @@
       "title": "Part of Vismar Aqua",
       "subtitle": "Proud to be part of an innovative aquaculture ecosystem driving research, sustainability, and technological advancement.",
       "description": "Vismar Aqua is a forward-thinking aquaculture organization committed to sustainable seafood production, AI-driven innovation, and collaborative research. As part of this ecosystem, Neusatz Aqua benefits from:",
-      "benefit1": "Shared R&D resources and scientific partnerships with institutions like Alfred Wegener Institute (AWI)",
+      "benefit1": "Shared R&D resources and scientific partnerships with leading marine research institutions worldwide",
       "benefit2": "Access to cutting-edge AI behavior monitoring and digital twin technologies",
       "benefit3": "Participation in EU Horizon projects and gender equality initiatives",
       "benefit4": "Knowledge exchange with a network of aquaculture experts and innovators",
@@ -471,7 +471,7 @@
       },
       "international": {
         "title": "International Research Partners",
-        "description": "Collaboration with Alfred Wegener Institute (AWI) and other global institutions for AI and biotechnology innovation."
+        "description": "Collaboration with global marine science institutions for AI and biotechnology innovation."
       },
       "horizon": {
         "title": "EU Horizon Projects",
@@ -608,14 +608,14 @@
       "title": "Research Partners",
       "subtitle": "Collaborating with world-leading institutions to push the boundaries of aquaculture science",
       "awi": {
-        "name": "Alfred Wegener Institute (AWI)",
-        "country": "Germany",
-        "description": "Polar and marine research, aquaculture innovation"
+        "name": "Global Marine Research Network",
+        "country": "International Consortium",
+        "description": "Collaborative marine science initiative for sustainable aquaculture"
       },
       "shrimpwiz": {
-        "name": "ShrimpWiz",
-        "country": "International",
-        "description": "Shrimp aquaculture technology and consulting"
+        "name": "Aquaculture Insight Lab",
+        "country": "Europe",
+        "description": "Shrimp aquaculture technology and applied analytics"
       },
       "horizon": {
         "name": "Horizon Europe",
@@ -932,16 +932,16 @@
       "title": "Our Current Partners",
       "subtitle": "We're proud to collaborate with leading institutions and organizations driving innovation in aquaculture.",
       "awi": {
-        "name": "Alfred Wegener Institute (AWI)",
-        "location": "Germany",
-        "description": "Collaboration on polar and marine research, bringing world-class scientific expertise to our aquaculture innovation projects.",
-        "focus": "Marine Biology & Research"
+        "name": "Global Marine Research Network",
+        "location": "International Consortium",
+        "description": "Collaboration with a worldwide network of marine scientists bringing advanced research capabilities to our innovation projects.",
+        "focus": "Marine Science & Research"
       },
       "shrimpwiz": {
-        "name": "ShrimpWiz",
-        "location": "International",
-        "description": "Technology partnership for AI-powered shrimp behavior monitoring and digital twin systems in aquaculture.",
-        "focus": "AI & Computer Vision"
+        "name": "Aquaculture Insight Lab",
+        "location": "Europe",
+        "description": "Technology partnership delivering AI-powered shrimp behavior monitoring and digital twin systems for aquaculture.",
+        "focus": "AI & Data Analytics"
       },
       "horizon": {
         "name": "Horizon Europe",
