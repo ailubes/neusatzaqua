@@ -85,14 +85,14 @@ export default function NewsPage() {
     },
     {
       id: 3,
-      title: "Partnership with Alfred Wegener Institute Announced",
+      title: "Global Marine Research Network Joins Our Alliance",
       excerpt:
-        "We're proud to announce our collaboration with AWI, Germany's leading polar and marine research institution. This partnership will advance our understanding of shrimp welfare and optimal breeding conditions.",
+        "We welcome the Global Marine Research Network as a collaborator, expanding our access to shared field data and marine science expertise for shrimp welfare studies.",
       category: t("categories.research"),
       categorySlug: "research",
       date: "2025-09-28",
       readTime: `3 ${t("readTime")}`,
-      image: "/news-awi-partnership.jpg",
+      image: "/news-marine-research.jpg",
       featured: false,
     },
     {

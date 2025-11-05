@@ -99,7 +99,7 @@ Here’s your full **web design prompt** — ready for developers, AI web builde
 
 7. **Partnerships**
 
-   * Collaboration logos: Alfred Wegener Institute (AWI, Germany), ShrimpWiz, Horizon Europe research partners.
+   * Collaboration logos: Global Marine Research Network, Aquaculture Insight Lab, Horizon Europe research partners.
    * Call for partners: “Join our innovation network for smarter aquaculture.”
    * Contact form for research collaboration.
 
