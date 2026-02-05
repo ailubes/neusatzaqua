@@ -47,12 +47,123 @@
   },
   "home": {
     "hero": {
-      "title": "Nachhaltige Zucht der",
-      "titleHighlight": "Zukunft der Garnelen-Aquakultur",
-      "subtitle": "Vom Schwarzen Meer in die Welt — Ukraines erste Vannamei-Garnelen-Brüterei.",
+      "titleWords": ["Nachhaltige", "Zucht", "der", "Zukunft", "der", "Garnelen", "Aquakultur"],
+      "subtitle": "Vom Schwarzen Meer in die Welt — Ukraines erste Vannamei-Garnelen-Brüterei",
       "ctaLearnMore": "Mehr erfahren",
       "ctaContact": "Kontaktieren Sie uns",
-      "ctaProjects": "Unsere Projekte"
+      "ctaProcess": "Unser Prozess"
+    },
+    "mission": {
+      "statement": "Pionierarbeit für nachhaltige Garnelen-Aquakultur durch KI-Innovation und Umweltverantwortung",
+      "subtitle": "Wir verbinden Spitzentechnologie mit verantwortungsvollen Praktiken, um die Zukunft der Aquakultur zu gestalten"
+    },
+    "values": {
+      "title": "Unsere Werte",
+      "subtitle": "Die Prinzipien, die jede unserer Entscheidungen leiten",
+      "sustainability": {
+        "title": "Nachhaltigkeit",
+        "description": "Engagement für umweltverantwortliche Aquakulturpraktiken, die unsere Ökosysteme für zukünftige Generationen schützen."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Nutzung von KI und Datenanalyse zur Revolutionierung der Garnelenzucht und Überwachungssysteme."
+      },
+      "excellence": {
+        "title": "Exzellenz",
+        "description": "Aufrechterhaltung höchster Standards in Biosicherheit, Genetik und Postlarvenqualität."
+      },
+      "responsibility": {
+        "title": "Verantwortung",
+        "description": "Aufbau widerstandsfähiger Systeme mit Transparenz, Tierwohl und lokalen Gemeinschaften im Fokus."
+      }
+    },
+    "impact": {
+      "title": "Unsere Wirkung",
+      "description": "Messbare Ergebnisse, die unser Engagement für Innovation und Nachhaltigkeit in der Aquakultur demonstrieren.",
+      "productivity": {
+        "label": "Produktivitätssteigerung",
+        "description": "Durch KI-gestützte Überwachung und datengesteuerte Entscheidungsfindung"
+      },
+      "observation": {
+        "label": "Kontinuierliche Beobachtung",
+        "description": "Echtzeit-Verhaltensüberwachung zur Stressreduzierung und Verbesserung des Wohlergehens"
+      },
+      "transparency": {
+        "label": "Datentransparenz",
+        "description": "Vollständige Rückverfolgbarkeit und transparente Datenerfassung für Zertifizierung"
+      }
+    },
+    "innovation": {
+      "badge": "KI-gestützte Innovation",
+      "title": "KI für Aquakultur-Verhaltenseinblick",
+      "description": "Unser proprietäres KI-System nutzt Computer Vision und maschinelles Lernen, um das Verhalten von Garnelen auf einem beispiellosen Detaillierungsgrad zu verstehen und vorherzusagen.",
+      "feature1": "Echtzeit-Verhaltensanalyse und Gesundheitserkennung",
+      "feature2": "24/7 automatisierte Beobachtung ohne menschliches Eingreifen",
+      "feature3": "Digital Twin-Technologie für prädiktive Brütereimodelle",
+      "feature4": "Prädiktive Analytik für optimale Zuchtbedingungen",
+      "cta": "Innovation erkunden"
+    },
+    "sustainability": {
+      "title": "Nachhaltigkeit",
+      "subtitle": "Aufbau einer verantwortungsvollen Aquakultur-Zukunft durch drei miteinander verbundene Säulen",
+      "environmental": {
+        "title": "Umwelt",
+        "description": "Wasserrezirkulationssysteme, Abfall-zu-Ressourcen-Umwandlung und Energieeffizienz-Optimierung."
+      },
+      "social": {
+        "title": "Sozial",
+        "description": "Faire Löhne, technische Schulungen und Wohlstand der Gemeinschaft in der Region Mykolajiw."
+      },
+      "economic": {
+        "title": "Wirtschaftlich",
+        "description": "Nachhaltige Geschäftspraktiken, die langfristige Lebensfähigkeit und Wachstum sicherstellen."
+      },
+      "cta": "Mehr erfahren"
+    },
+    "partnerships": {
+      "title": "Partnerschaften",
+      "subtitle": "Zusammenarbeit mit führenden Institutionen zur Förderung der Aquakultur-Innovation",
+      "research": {
+        "title": "Forschung",
+        "description": "Partnerschaft mit wissenschaftlichen Institutionen zur Förderung des Aquakulturwissens und Entwicklung neuer Technologien."
+      },
+      "industry": {
+        "title": "Industrie",
+        "description": "Zusammenarbeit mit Branchenführern zur Implementierung bewährter Praktiken und nachhaltiger Lösungen."
+      },
+      "community": {
+        "title": "Gemeinschaft",
+        "description": "Engagement mit lokalen Gemeinschaften zur Schaffung gemeinsamen Werts und nachhaltiger Entwicklung."
+      },
+      "cta": "Partner werden"
+    },
+    "news": {
+      "title": "Neueste Updates",
+      "subtitle": "Bleiben Sie informiert über unsere Fortschritte, Innovationen und Gemeinschaftsinitiativen",
+      "readMore": "Weiterlesen",
+      "viewAll": "Alle Updates anzeigen",
+      "categories": {
+        "research": "Forschung",
+        "facility": "Anlagen-Updates",
+        "community": "Gemeinschaft"
+      },
+      "items": {
+        "construction": {
+          "title": "Meilenstein im Brtereibau",
+          "date": "2024",
+          "excerpt": "Erste Phase des Baus der ersten Vannamei-Garnelen-Brüterei der Ukraine abgeschlossen."
+        },
+        "ai": {
+          "title": "KI-System-Implementierung",
+          "date": "2024",
+          "excerpt": "Fortschrittliche Computer-Vision-Systeme zur Echtzeit-Verhaltensüberwachung installiert."
+        },
+        "community": {
+          "title": "Start der Gemeinschaftspartnerschaft",
+          "date": "2024",
+          "excerpt": "Neue Schulungsprogramme schaffen lokale Beschäftigungsmöglichkeiten in der Region Mykolajiw."
+        }
+      }
     },
     "about": {
       "title": "Ukraines erste Vannamei-Garnelen-Brüterei",
@@ -138,23 +249,6 @@
       "feature2": "24/7 automatisierte Beobachtung ohne menschliches Eingreifen",
       "feature3": "Digital Twin-Technologie für prädiktive Brütereimodelle",
       "cta": "Sehen Sie sich unsere Forschung an"
-    },
-    "sustainability": {
-      "title": "Unser Nachhaltigkeitsengagement",
-      "subtitle": "Aufbau einer verantwortungsvollen Aquakultur-Zukunft durch drei miteinander verbundene Säulen.",
-      "animalWelfare": {
-        "title": "Tierwohl",
-        "description": "24/7 Verhaltensüberwachung, optimale Bedingungen und Stressreduzierungsprotokolle."
-      },
-      "circularEconomy": {
-        "title": "Kreislaufwirtschaft",
-        "description": "Wasserrezirkulation, Abfall-zu-Ressourcen-Umwandlung und Energieeffizienz."
-      },
-      "localEmployment": {
-        "title": "Lokale Beschäftigung",
-        "description": "Faire Löhne, technische Schulungen und Wohlstand der Gemeinschaft in der Region Mykolajiw."
-      },
-      "cta": "Unsere Auswirkungsgeschichte"
     },
     "partners": {
       "title": "Vertrauenswürdige Partner & Zertifizierungen",
@@ -1065,10 +1159,12 @@
       "community": "Gemeinschaft"
     },
     "featured": {
+      "label": "EMPFOHLEN",
       "title": "Featured Stories",
       "subtitle": "Hervorhebung unserer bedeutendsten jüngsten Entwicklungen und Errungenschaften."
     },
     "recent": {
+      "label": "ALLE NACHRICHTEN",
       "title": "Aktuelle Updates",
       "subtitle": "Erfahren Sie die neuesten Nachrichten aus unserer Brüterei und unseren Forschungsprogrammen."
     },
@@ -1087,6 +1183,7 @@
       "subtitle": "Nehmen Sie Kontakt mit unserem Team auf, um mehr über unsere Brüterei zu erfahren, Partnerschaftsmöglichkeiten zu erkunden oder einen Anlagenbesuch zu planen."
     },
     "howToReach": {
+      "label": "KONTAKTDATEN",
       "title": "Wie Sie uns erreichen",
       "subtitle": "Wir sind hier, um Ihre Fragen zu beantworten und Kooperationsmöglichkeiten zu besprechen.",
       "email": "E-Mail",
@@ -1095,6 +1192,7 @@
       "address": "Adresse"
     },
     "form": {
+      "label": "KONTAKTIEREN SIE UNS",
       "title": "Senden Sie uns eine Nachricht",
       "subtitle": "Füllen Sie das untenstehende Formular aus und wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen.",
       "thankYou": {
@@ -1132,7 +1230,8 @@
         "messageRequired": "Nachricht ist erforderlich",
         "messageMinLength": "Nachricht muss mindestens 10 Zeichen enthalten"
       },
-      "submit": "Nachricht senden"
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet..."
     },
     "location": {
       "title": "Unser Standort",
@@ -1150,6 +1249,7 @@
       "note": "* Anlagenführungen nur nach Vereinbarung verfügbar"
     },
     "social": {
+      "label": "FOLGEN SIE UNS",
       "title": "Verbinden Sie sich mit uns",
       "subtitle": "Folgen Sie uns in den sozialen Medien für die neuesten Updates und Nachrichten.",
       "followLabel": "Folgen Sie uns auf"

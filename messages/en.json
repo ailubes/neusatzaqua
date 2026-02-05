@@ -47,12 +47,123 @@
   },
   "home": {
     "hero": {
-      "title": "Sustainably Breeding the",
-      "titleHighlight": "Future of Shrimp Aquaculture",
-      "subtitle": "From the Black Sea to the world — Ukraine's first Vannamei Shrimp Hatchery.",
+      "titleWords": ["Sustainably", "Breeding", "the", "Future", "of", "Shrimp", "Aquaculture"],
+      "subtitle": "From the Black Sea to the world — Ukraine's first Vannamei Shrimp Hatchery",
       "ctaLearnMore": "Learn More",
       "ctaContact": "Contact Us",
-      "ctaProjects": "Our Projects"
+      "ctaProcess": "Our Process"
+    },
+    "mission": {
+      "statement": "Pioneering sustainable shrimp aquaculture through AI innovation and environmental stewardship",
+      "subtitle": "We combine cutting-edge technology with responsible practices to build the future of aquaculture"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide every decision we make",
+      "sustainability": {
+        "title": "Sustainability",
+        "description": "Committed to environmentally responsible aquaculture practices that protect our ecosystems for future generations."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Leveraging AI and data analytics to revolutionize shrimp breeding and monitoring systems."
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Maintaining the highest standards in biosecurity, genetics, and postlarvae quality."
+      },
+      "responsibility": {
+        "title": "Responsibility",
+        "description": "Building resilient systems with transparency, animal welfare, and local communities in mind."
+      }
+    },
+    "impact": {
+      "title": "Our Impact",
+      "description": "Measurable results that demonstrate our commitment to innovation and sustainability in aquaculture.",
+      "productivity": {
+        "label": "Productivity Increase",
+        "description": "Through AI-powered monitoring and data-driven decision making"
+      },
+      "observation": {
+        "label": "Continuous Observation",
+        "description": "Real-time behavioral monitoring reducing stress and improving welfare"
+      },
+      "transparency": {
+        "label": "Data Transparency",
+        "description": "Complete traceability and transparent data collection for certification"
+      }
+    },
+    "innovation": {
+      "badge": "AI-Powered Innovation",
+      "title": "AI for Aquaculture Behavior Insight",
+      "description": "Our proprietary AI system uses computer vision and machine learning to understand and predict shrimp behavior at an unprecedented level of detail.",
+      "feature1": "Real-time behavioral analysis and health detection",
+      "feature2": "24/7 automated observation without human intervention",
+      "feature3": "Digital twin technology for predictive hatchery models",
+      "feature4": "Predictive analytics for optimal breeding conditions",
+      "cta": "Explore Our Innovation"
+    },
+    "sustainability": {
+      "title": "Sustainability",
+      "subtitle": "Building a responsible aquaculture future through three interconnected pillars",
+      "environmental": {
+        "title": "Environmental",
+        "description": "Water recirculation systems, waste-to-resource conversion, and energy efficiency optimization."
+      },
+      "social": {
+        "title": "Social",
+        "description": "Fair wages, technical training, and community prosperity in the Mykolaiv region."
+      },
+      "economic": {
+        "title": "Economic",
+        "description": "Sustainable business practices that ensure long-term viability and growth."
+      },
+      "cta": "Learn More"
+    },
+    "partnerships": {
+      "title": "Partnerships",
+      "subtitle": "Collaborating with leading institutions to advance aquaculture innovation",
+      "research": {
+        "title": "Research",
+        "description": "Partnering with scientific institutions to advance aquaculture knowledge and develop new technologies."
+      },
+      "industry": {
+        "title": "Industry",
+        "description": "Working with industry leaders to implement best practices and sustainable solutions."
+      },
+      "community": {
+        "title": "Community",
+        "description": "Engaging with local communities to create shared value and sustainable development."
+      },
+      "cta": "Partner With Us"
+    },
+    "news": {
+      "title": "Latest Updates",
+      "subtitle": "Stay informed about our progress, innovations, and community initiatives",
+      "readMore": "Read More",
+      "viewAll": "View All Updates",
+      "categories": {
+        "research": "Research",
+        "facility": "Facility Updates",
+        "community": "Community"
+      },
+      "items": {
+        "construction": {
+          "title": "Hatchery Construction Milestone",
+          "date": "2024",
+          "excerpt": "First phase of construction completed for Ukraine's first Vannamei shrimp hatchery."
+        },
+        "ai": {
+          "title": "AI System Deployment",
+          "date": "2024",
+          "excerpt": "Advanced computer vision systems installed for real-time behavioral monitoring."
+        },
+        "community": {
+          "title": "Community Partnership Launch",
+          "date": "2024",
+          "excerpt": "New training programs create local employment opportunities in Mykolaiv region."
+        }
+      }
     },
     "about": {
       "title": "Ukraine's First Vannamei Shrimp Hatchery",
@@ -142,17 +253,17 @@
     "sustainability": {
       "title": "Our Sustainability Commitment",
       "subtitle": "Building a responsible aquaculture future through three interconnected pillars.",
-      "animalWelfare": {
-        "title": "Animal Welfare",
-        "description": "24/7 behavioral monitoring, optimal conditions, and stress-reduction protocols."
+      "environmental": {
+        "title": "Environmental",
+        "description": "Water recirculation systems, waste-to-resource conversion, and energy efficiency optimization."
       },
-      "circularEconomy": {
-        "title": "Circular Economy",
-        "description": "Water recirculation, waste-to-resource conversion, and energy efficiency."
+      "social": {
+        "title": "Social",
+        "description": "Fair wages, technical training, and community prosperity in the Mykolaiv region."
       },
-      "localEmployment": {
-        "title": "Local Employment",
-        "description": "Fair wages, technical training, and community prosperity in Mykolaiv region."
+      "economic": {
+        "title": "Economic",
+        "description": "Sustainable business practices that ensure long-term viability and growth."
       },
       "cta": "Our Impact Story"
     },
@@ -667,6 +778,7 @@
     "commitment": {
       "title": "Our Commitment",
       "subtitle": "At Neusatz Aqua, sustainability isn't an afterthought—it's the foundation of everything we do.",
+      "label": "OUR COMMITMENT",
       "animalWelfare": {
         "title": "Animal Welfare",
         "description": "Prioritizing the health and well-being of our shrimp through AI-powered monitoring, optimal environmental conditions, and stress-reduction protocols.",
@@ -701,6 +813,7 @@
     "metrics": {
       "title": "Impact by Numbers",
       "subtitle": "Measurable results from our commitment to sustainable and responsible aquaculture practices.",
+      "label": "IMPACT METRICS",
       "productivity": {
         "value": "15%",
         "label": "Productivity Increase",
@@ -720,6 +833,7 @@
     "environmental": {
       "title": "Environmental Impact",
       "subtitle": "Protecting our planet while producing high-quality shrimp through innovative, responsible practices.",
+      "label": "ENVIRONMENTAL IMPACT",
       "waterConservation": {
         "title": "Water Conservation",
         "description": "Advanced recirculation systems minimize water consumption while maintaining optimal conditions for shrimp health and growth."
@@ -740,6 +854,7 @@
     "community": {
       "title": "Community & Employment",
       "subtitle": "Investing in our local community and creating sustainable livelihoods in the Mykolaiv region.",
+      "label": "COMMUNITY & EMPLOYMENT",
       "employment": {
         "title": "Local Employment",
         "description": "We're creating meaningful jobs in the Mykolaiv region, offering competitive wages, comprehensive benefits, and opportunities for professional development.",
@@ -762,6 +877,7 @@
     "certifications": {
       "title": "Certifications & Standards",
       "subtitle": "Meeting and exceeding international standards for responsible aquaculture and transparent operations.",
+      "label": "CERTIFICATIONS & STANDARDS",
       "horizon": {
         "title": "Horizon Europe Compliance",
         "description": "Meeting EU standards for sustainable aquaculture and gender equality in research and innovation."
@@ -800,6 +916,7 @@
       "dateValue": "October 2025"
     },
     "intro": {
+      "label": "GENDER EQUALITY PLAN",
       "title": "Our Commitment to Equality",
       "description": "We recognize gender balance as a fundamental principle of European values and an essential factor in driving innovation, sustainability, and success in aquaculture and technology. Our Gender Equality Plan (GEP) sets out a series of measures and commitments to ensure equality of opportunity for all employees and collaborators, in line with the",
       "horizonStrategy": "Horizon Europe Gender Equality Strategy 2020–2025",
@@ -808,6 +925,7 @@
       "downloadCTA": "Download GEP (PDF)"
     },
     "processRequirements": {
+      "label": "PROCESS REQUIREMENTS",
       "title": "Process-Related Requirements",
       "subtitle": "Our comprehensive approach to implementing and maintaining gender equality standards.",
       "publicGEP": {
@@ -832,6 +950,7 @@
       }
     },
     "thematicAreas": {
+      "label": "THEMATIC AREAS",
       "title": "Thematic Areas Covered",
       "subtitle": "Our GEP addresses all five mandatory thematic areas required by Horizon Europe.",
       "tableHeaders": {
@@ -862,6 +981,7 @@
       }
     },
     "governance": {
+      "label": "GOVERNANCE & ACCOUNTABILITY",
       "title": "Governance & Accountability",
       "subtitle": "Clear leadership and regular review ensure our GEP remains effective and relevant.",
       "leadership": {
@@ -899,6 +1019,7 @@
       }
     },
     "compliance": {
+      "label": "COMPLIANCE",
       "title": "Horizon Europe GEP Compliance Summary",
       "subtitle": "Our GEP meets all requirements for Horizon Europe participation.",
       "checklist": [
@@ -911,6 +1032,7 @@
       "badge": "Fully Compliant with Horizon Europe Requirements"
     },
     "contact": {
+      "label": "CONTACT",
       "title": "Contact",
       "subtitle": "For inquiries related to the Gender Equality Plan or inclusion policy, please reach out to us.",
       "emailLabel": "Email",
@@ -1065,10 +1187,12 @@
       "community": "Community"
     },
     "featured": {
+      "label": "FEATURED",
       "title": "Featured Stories",
       "subtitle": "Highlighting our most significant recent developments and achievements."
     },
     "recent": {
+      "label": "ALL NEWS",
       "title": "Recent Updates",
       "subtitle": "Catch up on the latest news from our hatchery and research programs."
     },
@@ -1087,6 +1211,7 @@
       "subtitle": "Get in touch with our team to learn more about our hatchery, explore partnership opportunities, or schedule a facility visit."
     },
     "howToReach": {
+      "label": "CONTACT INFO",
       "title": "How to Reach Us",
       "subtitle": "We're here to answer your questions and discuss opportunities for collaboration.",
       "email": "Email",
@@ -1095,6 +1220,7 @@
       "address": "Address"
     },
     "form": {
+      "label": "GET IN TOUCH",
       "title": "Send Us a Message",
       "subtitle": "Fill out the form below and we'll get back to you as soon as possible.",
       "thankYou": {
@@ -1132,7 +1258,8 @@
         "messageRequired": "Message is required",
         "messageMinLength": "Message must be at least 10 characters"
       },
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending..."
     },
     "location": {
       "title": "Our Location",
@@ -1150,6 +1277,7 @@
       "note": "* Facility tours available by appointment only"
     },
     "social": {
+      "label": "FOLLOW US",
       "title": "Connect With Us",
       "subtitle": "Follow us on social media for the latest updates and news.",
       "followLabel": "Follow us on"

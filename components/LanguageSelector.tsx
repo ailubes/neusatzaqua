@@ -64,11 +64,11 @@ export default function LanguageSelector() {
         onClick={toggleDropdown}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="flex items-center space-x-1.5 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-[#72C5F0]/50 transition-all duration-200"
+        className="flex items-center space-x-1.5 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-aqua/50 transition-all duration-200"
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <span className="text-white font-semibold text-sm">
+        <span className="text-white font-semibold text-sm font-space-grotesk">
           {currentLanguage.display}
         </span>
         <motion.div
@@ -87,7 +87,7 @@ export default function LanguageSelector() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
-            className="absolute top-full right-0 mt-2 w-24 rounded-lg bg-gradient-to-b from-[#253C84] to-[#1e3270] shadow-2xl border border-white/20 backdrop-blur-md overflow-hidden z-50"
+            className="absolute top-full right-0 mt-2 w-24 rounded-lg bg-navy-light/95 shadow-2xl border border-white/10 backdrop-blur-md overflow-hidden z-50"
           >
             <div className="py-1">
               {languages.map((language, index) => {
@@ -104,17 +104,17 @@ export default function LanguageSelector() {
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      whileHover={{ x: 3, backgroundColor: 'rgba(114, 197, 240, 0.1)' }}
+                      whileHover={{ x: 3, backgroundColor: 'rgba(46, 196, 182, 0.1)' }}
                       whileTap={{ scale: 0.98 }}
-                      className={`flex items-center justify-center px-3 py-2 cursor-pointer transition-all duration-200 ${
+                      className={`flex items-center justify-center px-3 py-2 cursor-pointer transition-all duration-200 font-space-grotesk ${
                         isActive
-                          ? 'bg-[#72C5F0]/20 border-l-2 border-[#72C5F0]'
+                          ? 'bg-aqua/20 border-l-2 border-aqua'
                           : 'hover:bg-white/10'
                       }`}
                     >
                       <span
                         className={`text-sm font-semibold ${
-                          isActive ? 'text-[#72C5F0]' : 'text-white'
+                          isActive ? 'text-aqua' : 'text-white'
                         }`}
                       >
                         {language.display}
@@ -126,7 +126,7 @@ export default function LanguageSelector() {
             </div>
 
             {/* Dropdown Accent Line */}
-            <div className="h-0.5 bg-gradient-to-r from-transparent via-[#72C5F0] to-transparent" />
+            <div className="h-0.5 bg-gradient-to-r from-transparent via-aqua to-transparent" />
           </motion.div>
         )}
       </AnimatePresence>

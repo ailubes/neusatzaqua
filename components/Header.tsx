@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Link } from '@/navigation';
 import Image from 'next/image';
+import { Link } from '@/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX, HiChevronDown } from 'react-icons/hi';
 import LanguageSelector from './LanguageSelector';
@@ -32,7 +32,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -79,39 +79,32 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? 'bg-gradient-to-r from-[#253C84] via-[#1e3270] to-[#253C84] shadow-lg backdrop-blur-sm'
-          : 'bg-gradient-to-r from-[#253C84]/95 via-[#1e3270]/95 to-[#253C84]/95'
+          ? 'bg-[#0B1F3F]/90 backdrop-blur-md border-b border-white/10 shadow-lg'
+          : 'bg-transparent'
       }`}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 z-50">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Image
-                src="/logo.png"
-                alt={t('logoAlt')}
-                width={64}
-                height={64}
-                className="w-auto h-16"
-                priority
-              />
-            </motion.div>
-            <span className="text-white font-semibold text-xl hidden sm:block">
-              {t('companyName')} <span className="text-[#72C5F0]">{t('companyNameHighlight')}</span>
+          <Link href="/" className="flex items-center gap-2 z-50 group">
+            <Image
+              src="/logo.png"
+              alt="Neusatz Aqua Logo"
+              width={36}
+              height={48}
+              className="h-10 w-auto transition-transform duration-200 group-hover:scale-110"
+            />
+            <span className="font-space-grotesk font-semibold text-white text-lg transition-colors duration-200 group-hover:text-aqua">
+              Neusatz <span className="text-aqua">Aqua</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center flex-1 justify-end space-x-1">
             {/* Navigation Links */}
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 font-space-grotesk">
               {navigationLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <motion.div
@@ -121,7 +114,7 @@ export default function Header() {
                   >
                     {t(link.key)}
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#72C5F0] to-[#4aa3d1]"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-aqua"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.3 }}
@@ -152,7 +145,7 @@ export default function Header() {
                     <HiChevronDown className="w-4 h-4" />
                   </motion.div>
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#72C5F0] to-[#4aa3d1]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-aqua"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: isImpactDropdownOpen ? 1 : 0 }}
                     whileHover={{ scaleX: 1 }}
@@ -168,7 +161,7 @@ export default function Header() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -10, scale: 0.95 }}
                       transition={{ duration: 0.2, ease: 'easeOut' }}
-                      className="absolute top-full left-0 mt-2 w-56 rounded-lg bg-gradient-to-b from-[#253C84] to-[#1e3270] shadow-2xl border border-white/20 backdrop-blur-md overflow-hidden z-50"
+                      className="absolute top-full left-0 mt-2 w-56 rounded-lg bg-navy-light/95 shadow-2xl border border-white/10 backdrop-blur-md overflow-hidden z-50"
                     >
                       <div className="py-2">
                         {ourImpactLinks.map((link, index) => (
@@ -177,9 +170,9 @@ export default function Header() {
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: index * 0.05 }}
-                              whileHover={{ x: 5, backgroundColor: 'rgba(114, 197, 240, 0.1)' }}
+                              whileHover={{ x: 5, backgroundColor: 'rgba(46, 196, 182, 0.1)' }}
                               whileTap={{ scale: 0.98 }}
-                              className="px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer"
+                              className="px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-sm font-medium cursor-pointer font-space-grotesk"
                             >
                               {t(link.key)}
                             </motion.div>
@@ -187,7 +180,7 @@ export default function Header() {
                         ))}
                       </div>
                       {/* Dropdown Accent Line */}
-                      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#72C5F0] to-transparent" />
+                      <div className="h-0.5 bg-gradient-to-r from-transparent via-aqua to-transparent" />
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -202,7 +195,7 @@ export default function Header() {
                 >
                   {t('contact')}
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#72C5F0] to-[#4aa3d1]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-aqua"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -220,7 +213,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden z-50 p-2 text-white hover:text-[#72C5F0] transition-colors duration-200"
+            className="lg:hidden z-50 p-2 text-white hover:text-aqua transition-colors duration-200"
             aria-label="Toggle menu"
           >
             <motion.div
@@ -257,7 +250,7 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-full sm:w-80 bg-gradient-to-b from-[#253C84] via-[#1e3270] to-[#253C84] shadow-2xl lg:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-full sm:w-80 bg-navy shadow-2xl lg:hidden overflow-y-auto border-l border-white/10"
             >
               <div className="flex flex-col h-full pt-24 pb-8 px-6">
                 {/* Language Selector - Mobile */}
@@ -266,7 +259,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile Navigation Links */}
-                <div className="flex flex-col space-y-2">
+                <div className="flex flex-col space-y-2 font-space-grotesk">
                   {navigationLinks.map((link, index) => (
                     <Link key={link.href} href={link.href} onClick={closeMenu}>
                       <motion.div
@@ -275,12 +268,12 @@ export default function Header() {
                         transition={{ delay: index * 0.05 }}
                         whileHover={{ scale: 1.02, x: 5 }}
                         whileTap={{ scale: 0.98 }}
-                        className="relative px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/10 group"
+                        className="relative px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/5 group"
                       >
                         <div className="flex items-center justify-between">
                           <span>{t(link.key)}</span>
                           <motion.div
-                            className="w-0 h-0.5 bg-gradient-to-r from-[#72C5F0] to-[#4aa3d1] group-hover:w-6 transition-all duration-300"
+                            className="w-0 h-0.5 bg-aqua group-hover:w-6 transition-all duration-300"
                           />
                         </div>
                       </motion.div>
@@ -296,7 +289,7 @@ export default function Header() {
                       whileHover={{ scale: 1.02, x: 5 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => setIsMobileImpactOpen(!isMobileImpactOpen)}
-                      className="w-full px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/10 group"
+                      className="w-full px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/5 group"
                     >
                       <div className="flex items-center justify-between">
                         <span>{t('ourImpact')}</span>
@@ -327,7 +320,7 @@ export default function Header() {
                                 transition={{ delay: subIndex * 0.05 }}
                                 whileHover={{ x: 5 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="px-4 py-2 text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium rounded-lg hover:bg-white/5 border-l-2 border-[#72C5F0]/30"
+                                className="px-4 py-2 text-white/80 hover:text-white transition-colors duration-200 text-sm font-medium rounded-lg hover:bg-white/5 border-l-2 border-aqua/30"
                               >
                                 {t(link.key)}
                               </motion.div>
@@ -346,12 +339,12 @@ export default function Header() {
                       transition={{ delay: (navigationLinks.length + 1) * 0.05 }}
                       whileHover={{ scale: 1.02, x: 5 }}
                       whileTap={{ scale: 0.98 }}
-                      className="relative px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/10 group"
+                      className="relative px-4 py-3 text-white/90 hover:text-white transition-colors duration-200 text-base font-medium rounded-lg hover:bg-white/5 group"
                     >
                       <div className="flex items-center justify-between">
                         <span>{t('contact')}</span>
                         <motion.div
-                          className="w-0 h-0.5 bg-gradient-to-r from-[#72C5F0] to-[#4aa3d1] group-hover:w-6 transition-all duration-300"
+                          className="w-0 h-0.5 bg-aqua group-hover:w-6 transition-all duration-300"
                         />
                       </div>
                     </motion.div>
@@ -375,8 +368,8 @@ export default function Header() {
         )}
       </AnimatePresence>
 
-      {/* Aqua Gradient Accent Line */}
-      <div className="h-0.5 bg-gradient-to-r from-transparent via-[#72C5F0] to-transparent" />
+      {/* Aqua Accent Line - only visible when scrolled */}
+      <div className={`h-0.5 bg-gradient-to-r from-transparent via-aqua to-transparent transition-opacity duration-300 ${isScrolled ? 'opacity-100' : 'opacity-0'}`} />
     </motion.header>
   );
 }

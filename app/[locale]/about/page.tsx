@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -88,19 +89,26 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0B1F3F]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white section-padding">
-        <div className="absolute inset-0 bg-[url('/water-texture.jpg')] opacity-10 bg-cover bg-center" />
-        <div className="container-custom relative z-10">
+      <section className="relative bg-[#0B1F3F] text-white py-24 lg:py-36">
+        <div className="absolute inset-0 opacity-10">
+          <Image src="/hero_underwater.jpg" alt="" fill className="object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F3F]/80 to-[#0B1F3F]" />
+        <div className="container-custom relative z-10 px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
             className="max-w-4xl mx-auto text-center"
           >
-            <h1 className="text-white mb-6">{t("hero.title")}</h1>
-            <p className="text-xl md:text-2xl text-secondary-100 leading-relaxed">
+            <span className="mono-label text-[#2EC4B6] text-sm mb-6 block">ABOUT US</span>
+            <h1 className="text-white mb-6 text-4xl md:text-5xl lg:text-6xl font-semibold"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              {t("hero.title")}
+            </h1>
+            <p className="text-xl md:text-2xl text-[#A9BDD8] leading-relaxed">
               {t("hero.subtitle")}
             </p>
           </motion.div>
@@ -108,8 +116,8 @@ export default function AboutPage() {
       </section>
 
       {/* Company Overview */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#0B1F3F]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -118,27 +126,31 @@ export default function AboutPage() {
             className="grid md:grid-cols-2 gap-12 items-center"
           >
             <motion.div variants={fadeInUp}>
-              <h2 className="mb-6">{t("whoWeAre.title")}</h2>
-              <p className="text-lg text-neutral-700 mb-4 leading-relaxed">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">WHO WE ARE</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("whoWeAre.title")}
+              </h2>
+              <p className="text-lg text-[#A9BDD8] mb-4 leading-relaxed">
                 {t("whoWeAre.paragraph1")}
               </p>
-              <p className="text-lg text-neutral-700 mb-4 leading-relaxed">
+              <p className="text-lg text-[#A9BDD8] mb-4 leading-relaxed">
                 {t("whoWeAre.paragraph2")}
               </p>
-              <p className="text-lg text-neutral-700 leading-relaxed">
+              <p className="text-lg text-[#A9BDD8] leading-relaxed">
                 {t("whoWeAre.paragraph3")}
               </p>
             </motion.div>
 
             <motion.div
               variants={scaleIn}
-              className="relative h-[400px] rounded-lg overflow-hidden shadow-xl"
+              className="relative h-[400px] rounded-[18px] overflow-hidden glass-card"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
-                <FaWater className="w-32 h-32 text-secondary opacity-30" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2EC4B6]/20 to-[#0B1F3F]/40 flex items-center justify-center">
+                <FaWater className="w-32 h-32 text-[#2EC4B6] opacity-30" />
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <p className="text-primary text-center px-8 font-semibold text-xl">
+                <p className="text-white text-center px-8 font-semibold text-xl">
                   {t("whoWeAre.photoComingSoon")}
                 </p>
               </div>
@@ -148,8 +160,8 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#08162B]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -157,29 +169,33 @@ export default function AboutPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("mission.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">OUR PURPOSE</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("mission.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("mission.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <motion.div variants={fadeInUp} className="card">
-                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <FaAward className="w-8 h-8" />
+              <motion.div variants={fadeInUp} className="glass-panel p-8">
+                <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                  <FaAward className="w-8 h-8 text-[#2EC4B6]" />
                 </div>
-                <h3 className="text-2xl mb-4">{t("mission.missionTitle")}</h3>
-                <p className="text-neutral-700 leading-relaxed">
+                <h3 className="text-2xl text-white mb-4 font-semibold">{t("mission.missionTitle")}</h3>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("mission.missionText")}
                 </p>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="card">
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                  <FaLightbulb className="w-8 h-8" />
+              <motion.div variants={fadeInUp} className="glass-panel p-8">
+                <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                  <FaLightbulb className="w-8 h-8 text-[#2EC4B6]" />
                 </div>
-                <h3 className="text-2xl mb-4">{t("mission.visionTitle")}</h3>
-                <p className="text-neutral-700 leading-relaxed">
+                <h3 className="text-2xl text-white mb-4 font-semibold">{t("mission.visionTitle")}</h3>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("mission.visionText")}
                 </p>
               </motion.div>
@@ -189,8 +205,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#0B1F3F]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -199,37 +215,41 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("story.title")}</h2>
-              <p className="text-xl text-neutral-700">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">OUR JOURNEY</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("story.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8]">
                 {t("story.subtitle")}
               </p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="space-y-6">
-              <div className="border-l-4 border-primary pl-6 py-2">
-                <h4 className="text-primary mb-2">{t("story.beginning.title")}</h4>
-                <p className="text-neutral-700 leading-relaxed">
+              <div className="border-l-2 border-[#2EC4B6] pl-6 py-2">
+                <h4 className="text-white mb-2 font-semibold">{t("story.beginning.title")}</h4>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("story.beginning.text")}
                 </p>
               </div>
 
-              <div className="border-l-4 border-secondary pl-6 py-2">
-                <h4 className="text-primary mb-2">{t("story.innovation.title")}</h4>
-                <p className="text-neutral-700 leading-relaxed">
+              <div className="border-l-2 border-[#2EC4B6]/70 pl-6 py-2">
+                <h4 className="text-white mb-2 font-semibold">{t("story.innovation.title")}</h4>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("story.innovation.text")}
                 </p>
               </div>
 
-              <div className="border-l-4 border-accent pl-6 py-2">
-                <h4 className="text-primary mb-2">{t("story.vismar.title")}</h4>
-                <p className="text-neutral-700 leading-relaxed">
+              <div className="border-l-2 border-[#2EC4B6]/50 pl-6 py-2">
+                <h4 className="text-white mb-2 font-semibold">{t("story.vismar.title")}</h4>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("story.vismar.text")}
                 </p>
               </div>
 
-              <div className="border-l-4 border-primary-700 pl-6 py-2">
-                <h4 className="text-primary mb-2">{t("story.future.title")}</h4>
-                <p className="text-neutral-700 leading-relaxed">
+              <div className="border-l-2 border-[#2EC4B6]/30 pl-6 py-2">
+                <h4 className="text-white mb-2 font-semibold">{t("story.future.title")}</h4>
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t("story.future.text")}
                 </p>
               </div>
@@ -239,8 +259,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Facility */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-secondary-50">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#08162B]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -248,41 +268,45 @@ export default function AboutPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("facility.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">OUR FACILITY</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("facility.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("facility.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <motion.div variants={fadeInUp} className="card">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-primary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="w-6 h-6" />
+              <motion.div variants={fadeInUp} className="glass-panel p-8">
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <FaMapMarkerAlt className="w-6 h-6 text-[#2EC4B6]" />
                   </div>
                   <div>
-                    <h4 className="mb-2">{t("facility.location.title")}</h4>
-                    <p className="text-neutral-700">
+                    <h4 className="text-white mb-2 font-semibold">{t("facility.location.title")}</h4>
+                    <p className="text-[#A9BDD8]">
                       {t("facility.location.primary")}
                     </p>
-                    <p className="text-sm text-neutral-600 mt-2">
+                    <p className="text-sm text-[#A9BDD8]/70 mt-2">
                       {t("facility.location.secondary")}
                     </p>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="card">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-secondary text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <FaWater className="w-6 h-6" />
+              <motion.div variants={fadeInUp} className="glass-panel p-8">
+                <div className="flex items-start gap-4">
+                  <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <FaWater className="w-6 h-6 text-[#2EC4B6]" />
                   </div>
                   <div>
-                    <h4 className="mb-2">{t("facility.infrastructure.title")}</h4>
-                    <p className="text-neutral-700">
+                    <h4 className="text-white mb-2 font-semibold">{t("facility.infrastructure.title")}</h4>
+                    <p className="text-[#A9BDD8]">
                       {t("facility.infrastructure.primary")}
                     </p>
-                    <p className="text-sm text-neutral-600 mt-2">
+                    <p className="text-sm text-[#A9BDD8]/70 mt-2">
                       {t("facility.infrastructure.secondary")}
                     </p>
                   </div>
@@ -292,34 +316,34 @@ export default function AboutPage() {
 
             <motion.div
               variants={fadeInUp}
-              className="bg-white rounded-lg p-8 shadow-lg"
+              className="glass-panel p-8"
             >
-              <h3 className="text-2xl mb-6 text-center">{t("facility.highlights.title")}</h3>
+              <h3 className="text-2xl text-white mb-8 text-center font-semibold">{t("facility.highlights.title")}</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="bg-primary-100 text-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <FaLeaf className="w-8 h-8" />
+                  <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <FaLeaf className="w-8 h-8 text-[#2EC4B6]" />
                   </div>
-                  <h5 className="mb-2">{t("facility.highlights.biosecurity.title")}</h5>
-                  <p className="text-sm text-neutral-600">
+                  <h5 className="text-white mb-2 font-semibold">{t("facility.highlights.biosecurity.title")}</h5>
+                  <p className="text-sm text-[#A9BDD8]">
                     {t("facility.highlights.biosecurity.description")}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-secondary-100 text-secondary-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <FaChartLine className="w-8 h-8" />
+                  <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <FaChartLine className="w-8 h-8 text-[#2EC4B6]" />
                   </div>
-                  <h5 className="mb-2">{t("facility.highlights.ai.title")}</h5>
-                  <p className="text-sm text-neutral-600">
+                  <h5 className="text-white mb-2 font-semibold">{t("facility.highlights.ai.title")}</h5>
+                  <p className="text-sm text-[#A9BDD8]">
                     {t("facility.highlights.ai.description")}
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="bg-accent-100 text-accent-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <FaWater className="w-8 h-8" />
+                  <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <FaWater className="w-8 h-8 text-[#2EC4B6]" />
                   </div>
-                  <h5 className="mb-2">{t("facility.highlights.water.title")}</h5>
-                  <p className="text-sm text-neutral-600">
+                  <h5 className="text-white mb-2 font-semibold">{t("facility.highlights.water.title")}</h5>
+                  <p className="text-sm text-[#A9BDD8]">
                     {t("facility.highlights.water.description")}
                   </p>
                 </div>
@@ -330,8 +354,8 @@ export default function AboutPage() {
       </section>
 
       {/* Part of Vismar Aqua */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#0B1F3F]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -340,51 +364,55 @@ export default function AboutPage() {
             className="max-w-4xl mx-auto"
           >
             <motion.div variants={fadeInUp} className="text-center mb-8">
-              <h2 className="mb-6">{t("vismar.title")}</h2>
-              <p className="text-xl text-neutral-700 mb-8">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">OUR ECOSYSTEM</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("vismar.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8] mb-8">
                 {t("vismar.subtitle")}
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="card bg-gradient-to-br from-primary-50 to-secondary-50">
+            <motion.div variants={fadeInUp} className="glass-panel p-8">
               <div className="flex items-center justify-center mb-6">
-                <div className="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center">
-                  <FaGlobe className="w-10 h-10" />
+                <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/30 w-20 h-20 rounded-2xl flex items-center justify-center">
+                  <FaGlobe className="w-10 h-10 text-[#2EC4B6]" />
                 </div>
               </div>
-              <p className="text-lg text-neutral-700 text-center leading-relaxed mb-6">
+              <p className="text-lg text-[#A9BDD8] text-center leading-relaxed mb-6">
                 {t("vismar.description")}
               </p>
               <ul className="space-y-3 max-w-2xl mx-auto">
                 <li className="flex items-start gap-3">
-                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs">✓</span>
+                  <div className="bg-[#2EC4B6]/20 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#2EC4B6] text-xs">✓</span>
                   </div>
-                  <span className="text-neutral-700">
+                  <span className="text-[#A9BDD8]">
                     {t("vismar.benefit1")}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs">✓</span>
+                  <div className="bg-[#2EC4B6]/20 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#2EC4B6] text-xs">✓</span>
                   </div>
-                  <span className="text-neutral-700">
+                  <span className="text-[#A9BDD8]">
                     {t("vismar.benefit2")}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs">✓</span>
+                  <div className="bg-[#2EC4B6]/20 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#2EC4B6] text-xs">✓</span>
                   </div>
-                  <span className="text-neutral-700">
+                  <span className="text-[#A9BDD8]">
                     {t("vismar.benefit3")}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs">✓</span>
+                  <div className="bg-[#2EC4B6]/20 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <span className="text-[#2EC4B6] text-xs">✓</span>
                   </div>
-                  <span className="text-neutral-700">
+                  <span className="text-[#A9BDD8]">
                     {t("vismar.benefit4")}
                   </span>
                 </li>
@@ -394,7 +422,7 @@ export default function AboutPage() {
                   href="https://vismar-aqua.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary-700 font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 text-[#2EC4B6] hover:text-[#3DD4C6] font-semibold transition-colors"
                 >
                   {t("vismar.learnMore")}
                   <FaArrowRight className="w-4 h-4" />
@@ -406,8 +434,8 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values */}
-      <section className="section-padding bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#08162B]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -415,8 +443,12 @@ export default function AboutPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="text-white mb-6">{t("values.title")}</h2>
-              <p className="text-xl text-secondary-100 max-w-3xl mx-auto">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">PRINCIPLES</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("values.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("values.subtitle")}
               </p>
             </motion.div>
@@ -429,11 +461,11 @@ export default function AboutPage() {
                 <motion.div
                   key={index}
                   variants={scaleIn}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300"
+                  className="glass-card p-6 hover:bg-white/[0.08] transition-all duration-300 group"
                 >
-                  <div className="text-accent mb-4">{value.icon}</div>
-                  <h4 className="text-white mb-3">{value.title}</h4>
-                  <p className="text-secondary-100 text-sm leading-relaxed">
+                  <div className="text-[#2EC4B6] mb-4 group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+                  <h4 className="text-white mb-3 font-semibold">{value.title}</h4>
+                  <p className="text-[#A9BDD8] text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </motion.div>
@@ -444,8 +476,8 @@ export default function AboutPage() {
       </section>
 
       {/* Photo Gallery Placeholder */}
-      <section className="section-padding bg-neutral-100">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#0B1F3F]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -453,8 +485,12 @@ export default function AboutPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("gallery.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="mono-label text-[#2EC4B6] text-sm mb-4 block">GALLERY</span>
+              <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                {t("gallery.title")}
+              </h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("gallery.subtitle")}
               </p>
             </motion.div>
@@ -464,24 +500,28 @@ export default function AboutPage() {
               className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
               {[
-                { id: 1, key: "broodstock" },
-                { id: 2, key: "maturation" },
-                { id: 3, key: "larval" },
-                { id: 4, key: "water" },
-                { id: 5, key: "ai" },
-                { id: 6, key: "exterior" },
+                { id: 1, key: "broodstock", image: "/facility-broodstock.jpg" },
+                { id: 2, key: "maturation", image: "/facility-maturation.jpg" },
+                { id: 3, key: "larval", image: "/facility-larval.jpg" },
+                { id: 4, key: "water", image: "/facility-water.jpg" },
+                { id: 5, key: "ai", image: "/facility-ai.jpg" },
+                { id: 6, key: "exterior", image: "/facility-exterior.jpg" },
               ].map((item) => (
                 <motion.div
                   key={item.id}
                   variants={scaleIn}
-                  className="relative h-64 rounded-lg overflow-hidden shadow-lg bg-gradient-to-br from-secondary/20 to-primary/20"
+                  className="relative h-64 rounded-[18px] overflow-hidden glass-card group"
                 >
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                    <FaWater className="w-16 h-16 text-secondary opacity-30 mb-4" />
-                    <p className="text-primary font-semibold">
-                      {t("gallery.photoComingSoon")}
-                    </p>
-                    <p className="text-sm text-neutral-600 mt-2">
+                  <Image
+                    src={item.image}
+                    alt={t(`gallery.items.${item.key}`)}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3F]/90 via-[#0B1F3F]/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="text-white font-semibold text-lg">
                       {t(`gallery.items.${item.key}`)}
                     </p>
                   </div>
@@ -493,29 +533,32 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-secondary-600 to-primary">
-        <div className="container-custom">
+      <section className="py-20 lg:py-32 bg-[#122A4D]">
+        <div className="container-custom px-6 lg:px-[7vw]">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
-            className="text-center text-white"
+            className="text-center"
           >
-            <h2 className="text-white mb-6">{t("cta.title")}</h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
+            <h2 className="text-white mb-6 text-3xl md:text-4xl font-semibold"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+              {t("cta.title")}
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto text-[#A9BDD8]">
               {t("cta.subtitle")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-primary hover:bg-neutral-100 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                className="btn-primary inline-flex items-center gap-2"
               >
                 {t("cta.contact")}
               </Link>
               <Link
                 href="/innovation"
-                className="bg-primary hover:bg-primary-800 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 border-2 border-white/30"
+                className="btn-outline inline-flex items-center gap-2"
               >
                 {t("cta.innovation")}
               </Link>

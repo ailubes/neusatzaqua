@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import {
   FaEnvelope,
   FaPhone,
@@ -13,6 +13,7 @@ import {
   FaGlobe,
   FaPaperPlane,
   FaWhatsapp,
+  FaSpinner,
 } from "react-icons/fa";
 import { useTranslations } from "next-intl";
 
@@ -52,119 +53,7 @@ const scaleIn = {
 
 export default function ContactPage() {
   const t = useTranslations("contact");
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
-    "idle"
-  );
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validateForm = () => {
-    const newErrors = {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    };
-
-    let isValid = true;
-
-    if (!formData.name.trim()) {
-      newErrors.name = t("form.errors.nameRequired");
-      isValid = false;
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = t("form.errors.emailRequired");
-      isValid = false;
-    } else if (!validateEmail(formData.email)) {
-      newErrors.email = t("form.errors.emailInvalid");
-      isValid = false;
-    }
-
-    if (!formData.subject.trim()) {
-      newErrors.subject = t("form.errors.subjectRequired");
-      isValid = false;
-    }
-
-    if (!formData.message.trim()) {
-      newErrors.message = t("form.errors.messageRequired");
-      isValid = false;
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = t("form.errors.messageMinLength");
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-
-    // Form submission logic would go here (e.g., send to API)
-    setFormStatus("success");
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setFormStatus("idle");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-      setErrors({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-    }, 3000);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-    // Clear error when user starts typing
-    if (errors[name as keyof typeof errors]) {
-      setErrors({
-        ...errors,
-        [name]: "",
-      });
-    }
-  };
+  const [state, handleSubmit] = useForm("mreazlkk");
 
   const contactInfo = [
     {
@@ -225,9 +114,9 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0B1F3F]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white section-padding">
+      <section className="relative bg-[#0B1F3F] text-white section-padding">
         <div className="absolute inset-0 bg-[url('/water-texture.jpg')] opacity-10 bg-cover bg-center" />
         <div className="container-custom relative z-10">
           <motion.div
@@ -237,12 +126,12 @@ export default function ContactPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-secondary/20 backdrop-blur-sm p-4 rounded-full">
-                <FaEnvelope className="w-16 h-16 text-secondary" />
+              <div className="bg-[#2EC4B6]/20 backdrop-blur-sm p-4 rounded-full">
+                <FaEnvelope className="w-16 h-16 text-[#2EC4B6]" />
               </div>
             </div>
             <h1 className="text-white mb-6">{t("hero.title")}</h1>
-            <p className="text-xl md:text-2xl text-secondary-100 leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#A9BDD8] leading-relaxed">
               {t("hero.subtitle")}
             </p>
           </motion.div>
@@ -250,7 +139,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -259,8 +148,11 @@ export default function ContactPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("howToReach.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4 block">
+                {t("howToReach.label")}
+              </span>
+              <h2 className="mb-6 text-white">{t("howToReach.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("howToReach.subtitle")}
               </p>
             </motion.div>
@@ -277,17 +169,17 @@ export default function ContactPage() {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  className="card text-center hover:shadow-xl transition-all duration-300 group"
+                  className="glass-card p-6 text-center hover:shadow-xl transition-all duration-300 group"
                 >
                   <div
-                    className={`${info.color} text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
+                    className={`bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
                   >
                     {info.icon}
                   </div>
-                  <h4 className="text-sm font-semibold text-neutral-600 mb-2">
+                  <h4 className="text-sm font-semibold text-[#A9BDD8] mb-2">
                     {info.label}
                   </h4>
-                  <p className="text-neutral-800 font-medium group-hover:text-primary transition-colors">
+                  <p className="text-white font-medium group-hover:text-[#2EC4B6] transition-colors">
                     {info.value}
                   </p>
                 </motion.a>
@@ -298,7 +190,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="section-padding bg-[#08162B]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -307,22 +199,25 @@ export default function ContactPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("form.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4 block">
+                {t("form.label")}
+              </span>
+              <h2 className="mb-6 text-white">{t("form.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("form.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <motion.div variants={fadeInUp} className="card">
-                {formStatus === "success" ? (
+              <motion.div variants={fadeInUp} className="glass-card p-6">
+                {state.succeeded ? (
                   <div className="text-center py-12">
-                    <div className="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                       <FaCheckCircle className="w-10 h-10" />
                     </div>
-                    <h3 className="text-2xl mb-4">{t("form.thankYou.title")}</h3>
-                    <p className="text-lg text-neutral-700">
+                    <h3 className="text-2xl mb-4 text-white">{t("form.thankYou.title")}</h3>
+                    <p className="text-lg text-[#A9BDD8]">
                       {t("form.thankYou.message")}
                     </p>
                   </div>
@@ -331,7 +226,7 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-semibold text-neutral-700 mb-2"
+                        className="block text-sm font-semibold text-white mb-2"
                       >
                         {t("form.fields.name")} {t("form.fields.required")}
                       </label>
@@ -339,28 +234,24 @@ export default function ContactPage() {
                         type="text"
                         id="name"
                         name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 border ${
-                          errors.name
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-neutral-300 focus:ring-primary"
-                        } rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all`}
+                        required
+                        className="w-full px-4 py-3 border border-white/20 focus:ring-[#2EC4B6] bg-[#0B1F3F] text-white rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all"
                         placeholder={t("form.placeholders.name")}
                         aria-label="Full name"
                         aria-required="true"
                       />
-                      {errors.name && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {errors.name}
-                        </p>
-                      )}
+                      <ValidationError
+                        prefix="Name"
+                        field="name"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
                     </div>
 
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-semibold text-neutral-700 mb-2"
+                        className="block text-sm font-semibold text-white mb-2"
                       >
                         {t("form.fields.email")} {t("form.fields.required")}
                       </label>
@@ -368,28 +259,24 @@ export default function ContactPage() {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 border ${
-                          errors.email
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-neutral-300 focus:ring-primary"
-                        } rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all`}
+                        required
+                        className="w-full px-4 py-3 border border-white/20 focus:ring-[#2EC4B6] bg-[#0B1F3F] text-white rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all"
                         placeholder={t("form.placeholders.email")}
                         aria-label="Email address"
                         aria-required="true"
                       />
-                      {errors.email && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {errors.email}
-                        </p>
-                      )}
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
                     </div>
 
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-semibold text-neutral-700 mb-2"
+                        className="block text-sm font-semibold text-white mb-2"
                       >
                         {t("form.fields.phone")}
                       </label>
@@ -397,9 +284,7 @@ export default function ContactPage() {
                         type="tel"
                         id="phone"
                         name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-3 border border-white/20 bg-[#0B1F3F] text-white rounded-lg focus:ring-2 focus:ring-[#2EC4B6] focus:border-transparent outline-none transition-all"
                         placeholder={t("form.placeholders.phone")}
                         aria-label="Phone number"
                       />
@@ -408,73 +293,75 @@ export default function ContactPage() {
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-semibold text-neutral-700 mb-2"
+                        className="block text-sm font-semibold text-white mb-2"
                       >
                         {t("form.fields.subject")} {t("form.fields.required")}
                       </label>
                       <select
                         id="subject"
                         name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className={`w-full px-4 py-3 border ${
-                          errors.subject
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-neutral-300 focus:ring-primary"
-                        } rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all`}
+                        required
+                        className="w-full px-4 py-3 border border-white/20 focus:ring-[#2EC4B6] bg-[#0B1F3F] text-white rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all"
                         aria-label="Subject"
                         aria-required="true"
                       >
-                        <option value="">{t("form.subjects.placeholder")}</option>
-                        <option value="general">{t("form.subjects.general")}</option>
-                        <option value="partnership">{t("form.subjects.partnership")}</option>
-                        <option value="research">{t("form.subjects.research")}</option>
-                        <option value="visit">{t("form.subjects.visit")}</option>
-                        <option value="media">{t("form.subjects.media")}</option>
-                        <option value="other">{t("form.subjects.other")}</option>
+                        <option value="" className="bg-[#0B1F3F]">{t("form.subjects.placeholder")}</option>
+                        <option value="general" className="bg-[#0B1F3F]">{t("form.subjects.general")}</option>
+                        <option value="partnership" className="bg-[#0B1F3F]">{t("form.subjects.partnership")}</option>
+                        <option value="research" className="bg-[#0B1F3F]">{t("form.subjects.research")}</option>
+                        <option value="visit" className="bg-[#0B1F3F]">{t("form.subjects.visit")}</option>
+                        <option value="media" className="bg-[#0B1F3F]">{t("form.subjects.media")}</option>
+                        <option value="other" className="bg-[#0B1F3F]">{t("form.subjects.other")}</option>
                       </select>
-                      {errors.subject && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {errors.subject}
-                        </p>
-                      )}
+                      <ValidationError
+                        prefix="Subject"
+                        field="subject"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
                     </div>
 
                     <div>
                       <label
                         htmlFor="message"
-                        className="block text-sm font-semibold text-neutral-700 mb-2"
+                        className="block text-sm font-semibold text-white mb-2"
                       >
                         {t("form.fields.message")} {t("form.fields.required")}
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
+                        required
                         rows={6}
-                        className={`w-full px-4 py-3 border ${
-                          errors.message
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-neutral-300 focus:ring-primary"
-                        } rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all resize-none`}
+                        className="w-full px-4 py-3 border border-white/20 focus:ring-[#2EC4B6] bg-[#0B1F3F] text-white rounded-lg focus:ring-2 focus:border-transparent outline-none transition-all resize-none"
                         placeholder={t("form.placeholders.message")}
                         aria-label="Message"
                         aria-required="true"
                       />
-                      {errors.message && (
-                        <p className="text-red-500 text-sm mt-1">
-                          {errors.message}
-                        </p>
-                      )}
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                        className="text-red-400 text-sm mt-1"
+                      />
                     </div>
 
                     <button
                       type="submit"
-                      className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                      disabled={state.submitting}
+                      className="w-full flex items-center justify-center gap-2 btn-accent disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <FaPaperPlane className="w-5 h-5" />
-                      {t("form.submit")}
+                      {state.submitting ? (
+                        <>
+                          <FaSpinner className="w-5 h-5 animate-spin" />
+                          {t("form.sending")}
+                        </>
+                      ) : (
+                        <>
+                          <FaPaperPlane className="w-5 h-5" />
+                          {t("form.submit")}
+                        </>
+                      )}
                     </button>
                   </form>
                 )}
@@ -483,16 +370,16 @@ export default function ContactPage() {
               {/* Map Placeholder & Additional Info */}
               <motion.div variants={fadeInUp} className="space-y-6">
                 {/* Map Placeholder */}
-                <div className="card">
-                  <h3 className="text-2xl mb-4">{t("location.title")}</h3>
-                  <div className="relative h-64 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-lg overflow-hidden mb-4">
+                <div className="glass-card p-6">
+                  <h3 className="text-2xl mb-4 text-white">{t("location.title")}</h3>
+                  <div className="relative h-64 bg-gradient-to-br from-[#2EC4B6]/10 to-[#2EC4B6]/5 rounded-lg overflow-hidden mb-4">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-center">
-                        <FaMapMarkerAlt className="w-16 h-16 text-primary mx-auto mb-3 opacity-50" />
-                        <p className="text-neutral-600 font-semibold">
+                        <FaMapMarkerAlt className="w-16 h-16 text-[#2EC4B6] mx-auto mb-3 opacity-50" />
+                        <p className="text-[#A9BDD8] font-semibold">
                           {t("location.mapComingSoon")}
                         </p>
-                        <p className="text-sm text-neutral-500 mt-2">
+                        <p className="text-sm text-[#A9BDD8]/70 mt-2">
                           Progresivka, Mykolaiv Region, Ukraine
                         </p>
                       </div>
@@ -502,7 +389,7 @@ export default function ContactPage() {
                     href="https://maps.google.com/?q=Progresivka,Mykolaiv,Ukraine"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-primary hover:text-primary-700 font-semibold transition-colors"
+                    className="inline-flex items-center gap-2 text-[#2EC4B6] hover:text-[#2EC4B6]/80 font-semibold transition-colors"
                   >
                     <FaMapMarkerAlt className="w-5 h-5" />
                     {t("location.openInMaps")}
@@ -510,9 +397,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Office Hours */}
-                <div className="card">
-                  <h3 className="text-2xl mb-4">{t("officeHours.title")}</h3>
-                  <div className="space-y-2 text-neutral-700">
+                <div className="glass-card p-6">
+                  <h3 className="text-2xl mb-4 text-white">{t("officeHours.title")}</h3>
+                  <div className="space-y-2 text-[#A9BDD8]">
                     <div className="flex justify-between">
                       <span className="font-semibold">{t("officeHours.monday")}</span>
                       <span>{t("officeHours.mondayHours")}</span>
@@ -526,7 +413,7 @@ export default function ContactPage() {
                       <span>{t("officeHours.sundayHours")}</span>
                     </div>
                   </div>
-                  <p className="text-sm text-neutral-600 mt-4">
+                  <p className="text-sm text-[#A9BDD8]/70 mt-4">
                     {t("officeHours.note")}
                   </p>
                 </div>
@@ -537,7 +424,7 @@ export default function ContactPage() {
       </section>
 
       {/* Social Media Links */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -546,8 +433,11 @@ export default function ContactPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("social.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4 block">
+                {t("social.label")}
+              </span>
+              <h2 className="mb-6 text-white">{t("social.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("social.subtitle")}
               </p>
             </motion.div>
@@ -562,7 +452,7 @@ export default function ContactPage() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`bg-gradient-to-br from-primary-50 to-secondary-50 p-4 rounded-full text-neutral-700 ${social.color} transition-all duration-300 hover:shadow-lg hover:scale-110`}
+                  className={`glass-card p-4 rounded-full text-[#A9BDD8] hover:text-[#2EC4B6] transition-all duration-300 hover:shadow-lg hover:scale-110`}
                   aria-label={`${t("social.followLabel")} ${social.name}`}
                 >
                   {social.icon}

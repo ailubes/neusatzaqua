@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
+// import { Poppins } from "next/font/google"; // Deprecated - kept for reference
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
@@ -7,11 +8,25 @@ import { locales } from '@/i18n';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-const poppins = Poppins({
-  weight: ["300", "400", "500", "600", "700"],
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-space-grotesk",
+});
+
+const inter = Inter({
+  weight: ["400", "500", "600"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-ibm-plex-mono",
 });
 
 export const metadata: Metadata = {
@@ -83,6 +98,13 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  other: {
+    "google-fonts": [
+      "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap",
+      "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap",
+    ].join(", "),
+  },
 };
 
 type LocaleLayoutProps = {
@@ -105,8 +127,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={poppins.variable} suppressHydrationWarning>
-      <body className={poppins.className}>
+    <html
+      lang={locale}
+      className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased`}
+      suppressHydrationWarning
+    >
+      <body className={`${spaceGrotesk.className} antialiased bg-[#0B1F3F]`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
           {children}

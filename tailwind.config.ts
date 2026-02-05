@@ -9,6 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // New navy/aqua color scheme
+        navy: {
+          DEFAULT: "#0B1F3F",
+          light: "#122A4D",
+          dark: "#08162B",
+        },
+        aqua: {
+          DEFAULT: "#2EC4B6",
+          light: "#3DD4C6",
+          dark: "#25A398",
+        },
+        slate: {
+          blue: "#A9BDD8",
+        },
+        // Legacy colors for backward compatibility
         primary: {
           DEFAULT: "#253C84",
           50: "#EBF0FF",
@@ -64,6 +79,13 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-poppins)", "Inter", "system-ui", "sans-serif"],
+        "space-grotesk": ["Space Grotesk", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        "ibm-plex-mono": ["IBM Plex Mono", "monospace"],
+      },
+      borderRadius: {
+        "18px": "1.125rem",
+        "22px": "1.375rem",
       },
     },
   },

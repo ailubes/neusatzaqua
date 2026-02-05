@@ -4,11 +4,26 @@
 
 @layer base {
   :root {
+    /* Dark Navy / Aqua Design System */
+    --background: 215 65% 15%;
+    --background-secondary: 215 55% 18%;
+    --foreground: 0 0% 100%;
+    --primary: 174 62% 47%;
+    --primary-light: #3DD4C6;
+    --primary-dark: #25A398;
+    --accent: 174 62% 47%;
+    --muted: 215 40% 25%;
+    --muted-foreground: 213 35% 75%;
+    --border: 215 30% 30%;
+    --ring: 174 62% 47%;
+    --radius: 1.125rem;
+
+    /* Legacy font variable */
     --font-poppins: "Poppins", "Inter", sans-serif;
   }
 
   body {
-    @apply bg-neutral text-neutral-900 antialiased;
+    @apply bg-[#0B1F3F] text-white antialiased font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -18,7 +33,7 @@
   h4,
   h5,
   h6 {
-    @apply font-semibold text-primary;
+    @apply font-space-grotesk text-white font-semibold;
   }
 
   h1 {
@@ -30,7 +45,7 @@
   }
 
   h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-2xl md:text-3xl lg:text-4xl text-[#A9BDD8];
   }
 
   h4 {
@@ -46,7 +61,7 @@
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply text-base leading-relaxed text-[#A9BDD8];
   }
 
   a {
@@ -59,28 +74,43 @@
 }
 
 @layer components {
+  /* Primary Button - Glass Effect */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-white/[0.12] border border-white/[0.28] text-white font-semibold py-3 px-6 rounded-full backdrop-blur-sm hover:bg-white/20 hover:-translate-y-0.5 transition-all duration-200;
   }
 
-  .btn-secondary {
-    @apply bg-secondary hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
-  }
-
+  /* Accent Button - Aqua */
   .btn-accent {
-    @apply bg-accent hover:bg-accent-600 text-primary font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-[#2EC4B6] text-[#0B1F3F] font-semibold py-3 px-6 rounded-full hover:bg-[#3DD4C6] hover:-translate-y-0.5 transition-all duration-200;
   }
 
+  /* Outline Button */
   .btn-outline {
-    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply bg-transparent border border-white/[0.35] text-white font-semibold py-3 px-6 rounded-full hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200;
   }
 
+  /* Legacy button classes for compatibility */
+  .btn-secondary {
+    @apply bg-[#2EC4B6]/20 hover:bg-[#2EC4B6]/30 text-white font-semibold py-3 px-6 rounded-full transition-all duration-200;
+  }
+
+  /* Glass Card - Exact from redesign */
+  .glass-card {
+    @apply bg-white/[0.06] border border-white/[0.14] rounded-[18px] backdrop-blur-[10px];
+  }
+
+  /* Glass Panel - Exact from redesign */
+  .glass-panel {
+    @apply bg-[#0B1F3F]/55 border border-white/[0.16] rounded-[22px] backdrop-blur-[12px];
+  }
+
+  /* Legacy card class */
   .card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6;
+    @apply glass-card p-6;
   }
 
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+    @apply py-20 lg:py-32 px-6 lg:px-[7vw];
   }
 
   .container-custom {
@@ -93,6 +123,76 @@
     text-wrap: balance;
   }
 
+  /* Hero Gradient Overlay */
+  .hero-gradient {
+    background: linear-gradient(180deg, rgba(11,31,63,0.35) 0%, rgba(11,31,63,0.75) 100%);
+  }
+
+  /* Card Gradient */
+  .card-gradient {
+    background: linear-gradient(180deg, rgba(11, 31, 63, 0.25) 0%, rgba(11, 31, 63, 0.65) 100%);
+  }
+
+  /* Text Gradient - White to Aqua */
+  .text-gradient {
+    @apply bg-gradient-to-r from-white to-[#2EC4B6] bg-clip-text text-transparent;
+  }
+
+  /* Slate Blue Text */
+  .text-slate-blue {
+    color: #A9BDD8;
+  }
+
+  /* Dark Navy Background */
+  .bg-dark-navy {
+    background-color: #0B1F3F;
+  }
+
+  /* Navy Light Background */
+  .bg-navy-light {
+    background-color: #122A4D;
+  }
+
+  /* Navy Dark Background */
+  .bg-navy-dark {
+    background-color: #08162B;
+  }
+
+  /* Aqua Colors */
+  .text-aqua {
+    color: #2EC4B6;
+  }
+
+  .bg-aqua {
+    background-color: #2EC4B6;
+  }
+
+  .bg-aqua-light {
+    background-color: #3DD4C6;
+  }
+
+  .bg-aqua-dark {
+    background-color: #25A398;
+  }
+
+  /* Mono Label Style */
+  .mono-label {
+    font-family: 'IBM Plex Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* Section z-index utilities for pinning */
+  .z-hero { z-index: 10; }
+  .z-mission { z-index: 20; }
+  .z-values { z-index: 30; }
+  .z-impact { z-index: 40; }
+  .z-innovation { z-index: 50; }
+  .z-sustainability { z-index: 60; }
+  .z-partnerships { z-index: 70; }
+  .z-updates { z-index: 80; }
+  .z-footer { z-index: 90; }
+
   .animate-fade-in {
     animation: fadeIn 0.6s ease-in-out;
   }
@@ -103,6 +203,21 @@
 
   .animate-slide-down {
     animation: slideDown 0.6s ease-out;
+  }
+
+  /* Section pinned for scroll animations */
+  .section-pinned {
+    @apply relative w-screen h-screen overflow-hidden;
+  }
+
+  /* Font mono utility */
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* Slow pulse animation for scroll hints */
+  .animation-pulse-slow {
+    animation: pulse-slow 2s ease-in-out infinite;
   }
 }
 
@@ -134,5 +249,16 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateY(4px);
   }
 }

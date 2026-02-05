@@ -143,9 +143,9 @@ export default function SustainabilityPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0B1F3F]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white section-padding">
+      <section className="relative bg-[#0B1F3F] text-white section-padding">
         <div className="absolute inset-0 bg-[url('/water-texture.jpg')] opacity-10 bg-cover bg-center" />
         <div className="container-custom relative z-10">
           <motion.div
@@ -156,11 +156,11 @@ export default function SustainabilityPage() {
           >
             <div className="flex justify-center mb-6">
               <div className="bg-secondary/20 backdrop-blur-sm p-4 rounded-full">
-                <FaLeaf className="w-16 h-16 text-secondary" />
+                <FaLeaf className="w-16 h-16 text-[#2EC4B6]" />
               </div>
             </div>
             <h1 className="text-white mb-6">{t("hero.title")}</h1>
-            <p className="text-xl md:text-2xl text-secondary-100 leading-relaxed">
+            <p className="text-xl md:text-2xl text-[#A9BDD8] leading-relaxed">
               {t("hero.subtitle")}
             </p>
           </motion.div>
@@ -168,7 +168,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Our Commitment */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -177,29 +177,32 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("commitment.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm">
+                {t("commitment.label")}
+              </span>
+              <h2 className="text-white mb-6">{t("commitment.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("commitment.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid lg:grid-cols-3 gap-8">
               {commitments.map((commitment, index) => (
-                <motion.div key={index} variants={scaleIn} className="card">
-                  <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <motion.div key={index} variants={scaleIn} className="glass-card p-6">
+                  <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                     {commitment.icon}
                   </div>
-                  <h3 className="text-2xl mb-4">{commitment.title}</h3>
-                  <p className="text-neutral-700 mb-6 leading-relaxed">
+                  <h3 className="text-2xl text-white mb-4">{commitment.title}</h3>
+                  <p className="text-[#A9BDD8] mb-6 leading-relaxed">
                     {commitment.description}
                   </p>
                   <ul className="space-y-2">
                     {commitment.highlights.map((highlight, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <div className="bg-secondary text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="bg-[#2EC4B6] text-[#0B1F3F] w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                           <span className="text-xs">✓</span>
                         </div>
-                        <span className="text-sm text-neutral-600">
+                        <span className="text-sm text-[#A9BDD8]/80">
                           {highlight}
                         </span>
                       </li>
@@ -213,7 +216,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Key Metrics */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="section-padding bg-[#08162B]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -222,8 +225,11 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("metrics.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm">
+                {t("metrics.label")}
+              </span>
+              <h2 className="text-white mb-6">{t("metrics.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("metrics.subtitle")}
               </p>
             </motion.div>
@@ -233,18 +239,18 @@ export default function SustainabilityPage() {
                 <motion.div
                   key={index}
                   variants={scaleIn}
-                  className="card text-center"
+                  className="glass-card p-6 text-center"
                 >
                   <div
-                    className={`${metric.color} text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6`}
+                    className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
                   >
                     {metric.icon}
                   </div>
-                  <div className="text-5xl font-bold text-primary mb-2">
+                  <div className="text-5xl font-bold text-white mb-2">
                     {metric.value}
                   </div>
-                  <h4 className="text-xl mb-4">{metric.label}</h4>
-                  <p className="text-neutral-600 leading-relaxed">
+                  <h4 className="text-xl text-white mb-4">{metric.label}</h4>
+                  <p className="text-[#A9BDD8] leading-relaxed">
                     {metric.description}
                   </p>
                 </motion.div>
@@ -255,7 +261,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Environmental Impact */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -264,8 +270,11 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("environmental.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm">
+                {t("environmental.label")}
+              </span>
+              <h2 className="text-white mb-6">{t("environmental.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("environmental.subtitle")}
               </p>
             </motion.div>
@@ -275,14 +284,14 @@ export default function SustainabilityPage() {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="flex gap-6 p-6 rounded-lg bg-gradient-to-br from-primary-50 to-secondary-50 hover:shadow-lg transition-shadow"
+                  className="flex gap-6 p-6 rounded-lg glass-card hover:shadow-lg transition-shadow"
                 >
-                  <div className="bg-primary text-white w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
                     {impact.icon}
                   </div>
                   <div>
-                    <h4 className="text-xl mb-3">{impact.title}</h4>
-                    <p className="text-neutral-700 leading-relaxed">
+                    <h4 className="text-xl text-white mb-3">{impact.title}</h4>
+                    <p className="text-[#A9BDD8] leading-relaxed">
                       {impact.description}
                     </p>
                   </div>
@@ -294,7 +303,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Community & Employment */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-accent-50">
+      <section className="section-padding bg-[#122A4D]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -303,28 +312,31 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("community.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm">
+                {t("community.label")}
+              </span>
+              <h2 className="text-white mb-6">{t("community.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("community.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <motion.div variants={fadeInUp} className="card">
-                <div className="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <motion.div variants={fadeInUp} className="glass-card p-6">
+                <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <FaUsers className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl mb-4">{t("community.employment.title")}</h3>
-                <p className="text-neutral-700 mb-4 leading-relaxed">
+                <h3 className="text-2xl text-white mb-4">{t("community.employment.title")}</h3>
+                <p className="text-[#A9BDD8] mb-4 leading-relaxed">
                   {t("community.employment.description")}
                 </p>
                 <ul className="space-y-2">
                   {(t.raw("community.employment.highlights") as string[]).map((highlight, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <div className="bg-secondary text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="bg-[#2EC4B6] text-[#0B1F3F] w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-xs">✓</span>
                       </div>
-                      <span className="text-sm text-neutral-600">
+                      <span className="text-sm text-[#A9BDD8]/80">
                         {highlight}
                       </span>
                     </li>
@@ -332,21 +344,21 @@ export default function SustainabilityPage() {
                 </ul>
               </motion.div>
 
-              <motion.div variants={fadeInUp} className="card">
-                <div className="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mb-6">
+              <motion.div variants={fadeInUp} className="glass-card p-6">
+                <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <FaHandshake className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl mb-4">{t("community.engagement.title")}</h3>
-                <p className="text-neutral-700 mb-4 leading-relaxed">
+                <h3 className="text-2xl text-white mb-4">{t("community.engagement.title")}</h3>
+                <p className="text-[#A9BDD8] mb-4 leading-relaxed">
                   {t("community.engagement.description")}
                 </p>
                 <ul className="space-y-2">
                   {(t.raw("community.engagement.highlights") as string[]).map((highlight, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <div className="bg-primary text-white w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="bg-[#2EC4B6] text-[#0B1F3F] w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-xs">✓</span>
                       </div>
-                      <span className="text-sm text-neutral-600">
+                      <span className="text-sm text-[#A9BDD8]/80">
                         {highlight}
                       </span>
                     </li>
@@ -359,7 +371,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* Certifications & Standards */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -368,8 +380,11 @@ export default function SustainabilityPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
-              <h2 className="mb-6">{t("certifications.title")}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <span className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm">
+                {t("certifications.label")}
+              </span>
+              <h2 className="text-white mb-6">{t("certifications.title")}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t("certifications.subtitle")}
               </p>
             </motion.div>
@@ -379,14 +394,14 @@ export default function SustainabilityPage() {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="card flex items-start gap-4"
+                  className="glass-card p-6 flex items-start gap-4"
                 >
-                  <div className="bg-accent text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="bg-[#2EC4B6] text-[#0B1F3F] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                     <FaAward className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-lg mb-2">{cert.title}</h4>
-                    <p className="text-sm text-neutral-600 leading-relaxed">
+                    <h4 className="text-lg text-white mb-2">{cert.title}</h4>
+                    <p className="text-sm text-[#A9BDD8] leading-relaxed">
                       {cert.description}
                     </p>
                   </div>
@@ -396,11 +411,11 @@ export default function SustainabilityPage() {
 
             <motion.div
               variants={fadeInUp}
-              className="mt-12 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-8 text-center"
+              className="mt-12 glass-panel rounded-lg p-8 text-center"
             >
-              <FaClipboardCheck className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-2xl mb-4">{t("certifications.transparencyCommitment.title")}</h3>
-              <p className="text-lg text-neutral-700 max-w-2xl mx-auto leading-relaxed">
+              <FaClipboardCheck className="w-12 h-12 text-[#2EC4B6] mx-auto mb-4" />
+              <h3 className="text-2xl text-white mb-4">{t("certifications.transparencyCommitment.title")}</h3>
+              <p className="text-lg text-[#A9BDD8] max-w-2xl mx-auto leading-relaxed">
                 {t("certifications.transparencyCommitment.description")}
               </p>
             </motion.div>
@@ -409,7 +424,7 @@ export default function SustainabilityPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-secondary-600 to-primary">
+      <section className="section-padding bg-[#2EC4B6]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -425,13 +440,13 @@ export default function SustainabilityPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-primary hover:bg-neutral-100 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                className="bg-[#0B1F3F] text-white hover:bg-[#0B1F3F]/90 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 {t("cta.contact")}
               </Link>
               <Link
                 href="/gender-equality"
-                className="bg-primary hover:bg-primary-800 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 border-2 border-white/30"
+                className="bg-white text-[#0B1F3F] hover:bg-white/90 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 {t("cta.gep")}
               </Link>

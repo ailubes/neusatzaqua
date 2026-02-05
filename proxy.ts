@@ -1,7 +1,8 @@
 import createMiddleware from 'next-intl/middleware';
+import { NextRequest } from 'next/server';
 import { locales, defaultLocale } from './i18n';
 
-export default createMiddleware({
+const handleI18nRouting = createMiddleware({
   // A list of all locales that are supported
   locales,
 
@@ -14,6 +15,10 @@ export default createMiddleware({
   // Detect locale from Accept-Language header
   localeDetection: true,
 });
+
+export default async function proxy(request: NextRequest) {
+  return handleI18nRouting(request);
+}
 
 export const config = {
   // Match all pathnames except for:

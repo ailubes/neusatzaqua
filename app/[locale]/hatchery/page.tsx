@@ -200,11 +200,11 @@ export default function HatcheryPage() {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-[#0B1F3F]">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white section-padding overflow-hidden">
+      <section className="relative bg-[#0B1F3F] text-white section-padding overflow-hidden">
         <div className="absolute inset-0 bg-[url('/water-texture.jpg')] opacity-10 bg-cover bg-center" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/50 to-primary" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1F3F]/50 to-[#0B1F3F]" />
 
         <div className="container-custom relative z-10">
           <motion.div
@@ -214,21 +214,21 @@ export default function HatcheryPage() {
             className="max-w-5xl mx-auto text-center"
           >
             <motion.div variants={fadeInUp} className="mb-6">
-              <span className="inline-block bg-secondary/20 text-secondary-100 px-6 py-2 rounded-full text-sm font-semibold mb-4">
+              <span className="inline-block bg-[#2EC4B6]/20 text-[#2EC4B6] px-6 py-2 rounded-full text-sm font-semibold mb-4">
                 {t('hero.badge')}
               </span>
             </motion.div>
             <motion.h1 variants={fadeInUp} className="text-white mb-6">
               {t('hero.title')}
             </motion.h1>
-            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-secondary-100 leading-relaxed mb-8">
+            <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-[#A9BDD8] leading-relaxed mb-8">
               {t('hero.subtitle')}
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center">
-              <Link href="#virtual-tour" className="btn-accent">
+              <Link href="#virtual-tour" className="btn-primary">
                 {t('hero.virtualTour')}
               </Link>
-              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-primary">
+              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-[#0B1F3F]">
                 {t('hero.scheduleVisit')}
               </Link>
             </motion.div>
@@ -237,7 +237,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Hatchery Overview */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -246,39 +246,40 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('overview.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-4xl mx-auto leading-relaxed">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('overview.title')}</p>
+              <h2 className="mb-6 text-white">{t('overview.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-4xl mx-auto leading-relaxed">
                 {t('overview.subtitle')}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <motion.div variants={scaleIn} className="card text-center">
-                <div className="bg-primary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div variants={scaleIn} className="glass-card p-6 text-center">
+                <div className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FaIndustry className="w-10 h-10" />
                 </div>
-                <h4 className="mb-3">{t('overview.controlled.title')}</h4>
-                <p className="text-neutral-700">
+                <h4 className="mb-3 text-white">{t('overview.controlled.title')}</h4>
+                <p className="text-[#A9BDD8]">
                   {t('overview.controlled.description')}
                 </p>
               </motion.div>
 
-              <motion.div variants={scaleIn} className="card text-center">
-                <div className="bg-secondary text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div variants={scaleIn} className="glass-card p-6 text-center">
+                <div className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FaShieldAlt className="w-10 h-10" />
                 </div>
-                <h4 className="mb-3">{t('overview.biosecurity.title')}</h4>
-                <p className="text-neutral-700">
+                <h4 className="mb-3 text-white">{t('overview.biosecurity.title')}</h4>
+                <p className="text-[#A9BDD8]">
                   {t('overview.biosecurity.description')}
                 </p>
               </motion.div>
 
-              <motion.div variants={scaleIn} className="card text-center">
-                <div className="bg-accent text-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <motion.div variants={scaleIn} className="glass-card p-6 text-center">
+                <div className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FaBrain className="w-10 h-10" />
                 </div>
-                <h4 className="mb-3">{t('overview.ai.title')}</h4>
-                <p className="text-neutral-700">
+                <h4 className="mb-3 text-white">{t('overview.ai.title')}</h4>
+                <p className="text-[#A9BDD8]">
                   {t('overview.ai.description')}
                 </p>
               </motion.div>
@@ -288,7 +289,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Our Facilities */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="section-padding bg-[#08162B]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -297,8 +298,9 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('facilities.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('facilities.title')}</p>
+              <h2 className="mb-6 text-white">{t('facilities.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('facilities.subtitle')}
               </p>
             </motion.div>
@@ -308,21 +310,21 @@ export default function HatcheryPage() {
                 <motion.div
                   key={index}
                   variants={scaleIn}
-                  className="card hover:border-2 hover:border-secondary transition-all"
+                  className="glass-card p-6 hover:border-2 hover:border-[#2EC4B6] transition-all"
                 >
-                  <div className="bg-gradient-to-br from-primary to-primary-700 text-white w-16 h-16 rounded-lg flex items-center justify-center mb-4">
+                  <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-lg flex items-center justify-center mb-4">
                     {facility.icon}
                   </div>
-                  <h4 className="mb-3">{facility.title}</h4>
-                  <p className="text-neutral-700 mb-4 leading-relaxed">
+                  <h4 className="mb-3 text-white">{facility.title}</h4>
+                  <p className="text-[#A9BDD8] mb-4 leading-relaxed">
                     {facility.description}
                   </p>
-                  <div className="border-t border-neutral-200 pt-4">
-                    <p className="text-sm font-semibold text-primary mb-2">{t('facilities.specsLabel')}</p>
+                  <div className="border-t border-white/10 pt-4">
+                    <p className="text-sm font-semibold text-[#2EC4B6] mb-2">{t('facilities.specsLabel')}</p>
                     <ul className="space-y-1">
                       {facility.specs.map((spec, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-neutral-600">
-                          <FaCheckCircle className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                        <li key={i} className="flex items-start gap-2 text-sm text-[#A9BDD8]">
+                          <FaCheckCircle className="w-4 h-4 text-[#2EC4B6] flex-shrink-0 mt-0.5" />
                           <span>{spec}</span>
                         </li>
                       ))}
@@ -336,7 +338,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Process Flow Visualization */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -345,8 +347,9 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('processFlow.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('processFlow.title')}</p>
+              <h2 className="mb-6 text-white">{t('processFlow.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('processFlow.subtitle')}
               </p>
             </motion.div>
@@ -354,7 +357,7 @@ export default function HatcheryPage() {
             <div className="max-w-5xl mx-auto">
               <div className="grid md:grid-cols-5 gap-4 relative">
                 {/* Flow arrows for desktop */}
-                <div className="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent -z-0" style={{ top: '25%' }} />
+                <div className="hidden md:block absolute top-1/4 left-0 right-0 h-1 bg-gradient-to-r from-[#2EC4B6]/50 via-[#2EC4B6] to-[#2EC4B6]/50 -z-0" style={{ top: '25%' }} />
 
                 {[
                   { icon: <FaWater />, title: t('processFlow.steps.broodstock.title'), stage: t('processFlow.steps.broodstock.stage') },
@@ -366,16 +369,16 @@ export default function HatcheryPage() {
                   <motion.div
                     key={index}
                     variants={fadeInUp}
-                    className="relative bg-white rounded-lg shadow-lg p-6 text-center border-2 border-neutral-100 hover:border-primary transition-all z-10"
+                    className="relative glass-card p-6 text-center border-2 border-white/10 hover:border-[#2EC4B6] transition-all z-10"
                   >
-                    <div className="bg-gradient-to-br from-primary to-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+                    <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
                       {step.icon}
                     </div>
-                    <div className="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">
+                    <div className="bg-[#0B1F3F] text-white w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold">
                       {index + 1}
                     </div>
-                    <h5 className="mb-2">{step.title}</h5>
-                    <p className="text-xs text-neutral-600">{step.stage}</p>
+                    <h5 className="mb-2 text-white">{step.title}</h5>
+                    <p className="text-xs text-[#A9BDD8]">{step.stage}</p>
                   </motion.div>
                 ))}
               </div>
@@ -385,7 +388,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Biosecurity Standards */}
-      <section className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white">
+      <section className="section-padding bg-[#122A4D] text-white">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -395,7 +398,7 @@ export default function HatcheryPage() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
               <h2 className="text-white mb-6">{t('biosecurity.title')}</h2>
-              <p className="text-xl text-secondary-100 max-w-3xl mx-auto">
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('biosecurity.subtitle')}
               </p>
             </motion.div>
@@ -405,11 +408,11 @@ export default function HatcheryPage() {
                 <motion.div
                   key={index}
                   variants={scaleIn}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all"
+                  className="glass-card p-6"
                 >
-                  <div className="text-accent mb-4">{standard.icon}</div>
+                  <div className="text-[#2EC4B6] mb-4">{standard.icon}</div>
                   <h5 className="text-white mb-3">{standard.title}</h5>
-                  <p className="text-secondary-100 text-sm leading-relaxed">
+                  <p className="text-[#A9BDD8] text-sm leading-relaxed">
                     {standard.description}
                   </p>
                 </motion.div>
@@ -417,7 +420,7 @@ export default function HatcheryPage() {
             </div>
 
             <motion.div variants={fadeInUp} className="mt-12 text-center">
-              <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-6 py-3 rounded-lg">
+              <div className="inline-flex items-center gap-2 bg-[#2EC4B6]/20 text-[#2EC4B6] px-6 py-3 rounded-lg">
                 <FaCheckCircle className="w-5 h-5" />
                 <span className="font-semibold">{t('biosecurity.certified')}</span>
               </div>
@@ -427,7 +430,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Technology & Innovation */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -436,8 +439,9 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('technology.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('technology.title')}</p>
+              <h2 className="mb-6 text-white">{t('technology.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('technology.subtitle')}
               </p>
             </motion.div>
@@ -447,15 +451,15 @@ export default function HatcheryPage() {
                 <motion.div
                   key={index}
                   variants={index % 2 === 0 ? slideInLeft : slideInRight}
-                  className="card hover:shadow-2xl transition-all"
+                  className="glass-card p-6 hover:shadow-2xl transition-all"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="bg-gradient-to-br from-secondary to-secondary-700 text-white w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <div className="bg-[#2EC4B6] text-[#0B1F3F] w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0">
                       {tech.icon}
                     </div>
                     <div>
-                      <h4 className="mb-3">{tech.title}</h4>
-                      <p className="text-neutral-700 leading-relaxed">
+                      <h4 className="mb-3 text-white">{tech.title}</h4>
+                      <p className="text-[#A9BDD8] leading-relaxed">
                         {tech.description}
                       </p>
                     </div>
@@ -464,20 +468,20 @@ export default function HatcheryPage() {
               ))}
             </div>
 
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-8">
-              <h3 className="text-2xl mb-6 text-center">{t('technology.highlights.title')}</h3>
+            <motion.div variants={fadeInUp} className="glass-panel rounded-lg p-8">
+              <h3 className="text-2xl mb-6 text-center text-white">{t('technology.highlights.title')}</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                  <p className="text-neutral-700">{t('technology.highlights.monitoring')}</p>
+                  <div className="text-4xl font-bold text-[#2EC4B6] mb-2">24/7</div>
+                  <p className="text-[#A9BDD8]">{t('technology.highlights.monitoring')}</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-secondary mb-2">15%</div>
-                  <p className="text-neutral-700">{t('technology.highlights.productivity')}</p>
+                  <div className="text-4xl font-bold text-[#2EC4B6] mb-2">15%</div>
+                  <p className="text-[#A9BDD8]">{t('technology.highlights.productivity')}</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold text-accent-700 mb-2">100%</div>
-                  <p className="text-neutral-700">{t('technology.highlights.transparency')}</p>
+                  <div className="text-4xl font-bold text-[#2EC4B6] mb-2">100%</div>
+                  <p className="text-[#A9BDD8]">{t('technology.highlights.transparency')}</p>
                 </div>
               </div>
             </motion.div>
@@ -486,7 +490,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Production Capacity */}
-      <section className="section-padding bg-gradient-to-br from-secondary-50 to-primary-50">
+      <section className="section-padding bg-[#08162B]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -495,8 +499,9 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('capacity.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('capacity.title')}</p>
+              <h2 className="mb-6 text-white">{t('capacity.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('capacity.subtitle')}
               </p>
             </motion.div>
@@ -506,18 +511,18 @@ export default function HatcheryPage() {
                 {productionSpecs.map((spec, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-6 shadow-md flex items-center justify-between"
+                    className="glass-card p-6 flex items-center justify-between"
                   >
-                    <span className="font-semibold text-primary">{spec.label}</span>
-                    <span className="text-2xl font-bold text-secondary">{spec.value}</span>
+                    <span className="font-semibold text-[#A9BDD8]">{spec.label}</span>
+                    <span className="text-2xl font-bold text-[#2EC4B6]">{spec.value}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 bg-primary text-white rounded-lg p-8 text-center">
-                <FaChartLine className="w-12 h-12 mx-auto mb-4 text-accent" />
+              <div className="mt-8 glass-panel text-white rounded-lg p-8 text-center">
+                <FaChartLine className="w-12 h-12 mx-auto mb-4 text-[#2EC4B6]" />
                 <h4 className="text-white mb-3">{t('capacity.scalable.title')}</h4>
-                <p className="text-secondary-100 leading-relaxed">
+                <p className="text-[#A9BDD8] leading-relaxed">
                   {t('capacity.scalable.description')}
                 </p>
               </div>
@@ -527,7 +532,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Collaboration with Scientific Institutions */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-[#0B1F3F]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -536,8 +541,9 @@ export default function HatcheryPage() {
             variants={staggerContainer}
           >
             <motion.div variants={fadeInUp} className="text-center mb-16">
-              <h2 className="mb-6">{t('collaboration.title')}</h2>
-              <p className="text-xl text-neutral-700 max-w-3xl mx-auto">
+              <p className="font-mono uppercase tracking-widest text-[#2EC4B6] text-sm mb-4">{t('collaboration.title')}</p>
+              <h2 className="mb-6 text-white">{t('collaboration.title')}</h2>
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('collaboration.subtitle')}
               </p>
             </motion.div>
@@ -547,21 +553,21 @@ export default function HatcheryPage() {
                 <motion.div
                   key={index}
                   variants={scaleIn}
-                  className="card text-center hover:shadow-2xl transition-all"
+                  className="glass-card p-6 text-center hover:shadow-2xl transition-all"
                 >
-                  <div className="bg-gradient-to-br from-primary to-primary-700 text-white w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="bg-[#2EC4B6] text-[#0B1F3F] w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                     {collab.icon}
                   </div>
-                  <h4 className="mb-3">{collab.title}</h4>
-                  <p className="text-neutral-700 leading-relaxed">
+                  <h4 className="mb-3 text-white">{collab.title}</h4>
+                  <p className="text-[#A9BDD8] leading-relaxed">
                     {collab.description}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-8">
-              <h3 className="text-2xl mb-6 text-center">{t('collaboration.researchFocus.title')}</h3>
+            <motion.div variants={fadeInUp} className="glass-panel rounded-lg p-8">
+              <h3 className="text-2xl mb-6 text-center text-white">{t('collaboration.researchFocus.title')}</h3>
               <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
                 {[
                   t('collaboration.researchFocus.genetics'),
@@ -572,8 +578,8 @@ export default function HatcheryPage() {
                   t('collaboration.researchFocus.digitalTwin'),
                 ].map((area, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <FaCheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <span className="text-neutral-700">{area}</span>
+                    <FaCheckCircle className="w-5 h-5 text-[#2EC4B6] flex-shrink-0" />
+                    <span className="text-[#A9BDD8]">{area}</span>
                   </div>
                 ))}
               </div>
@@ -583,7 +589,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* Virtual Tour */}
-      <section id="virtual-tour" className="section-padding bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700 text-white">
+      <section id="virtual-tour" className="section-padding bg-[#122A4D] text-white">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -593,20 +599,20 @@ export default function HatcheryPage() {
           >
             <motion.div variants={fadeInUp} className="text-center mb-12">
               <h2 className="text-white mb-6">{t('virtualTour.title')}</h2>
-              <p className="text-xl text-secondary-100 max-w-3xl mx-auto">
+              <p className="text-xl text-[#A9BDD8] max-w-3xl mx-auto">
                 {t('virtualTour.subtitle')}
               </p>
             </motion.div>
 
             <motion.div variants={scaleIn} className="bg-white/10 backdrop-blur-sm rounded-lg p-12">
-              <div className="relative aspect-video bg-gradient-to-br from-primary to-secondary rounded-lg overflow-hidden">
+              <div className="relative aspect-video bg-gradient-to-br from-[#0B1F3F] to-[#122A4D] rounded-lg overflow-hidden">
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                  <FaCube className="w-24 h-24 text-accent mb-6 animate-pulse" />
+                  <FaCube className="w-24 h-24 text-[#2EC4B6] mb-6 animate-pulse" />
                   <h3 className="text-white mb-4">{t('virtualTour.layoutTitle')}</h3>
-                  <p className="text-secondary-100 mb-6 max-w-xl">
+                  <p className="text-[#A9BDD8] mb-6 max-w-xl">
                     {t('virtualTour.description')}
                   </p>
-                  <div className="inline-flex items-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-semibold">
+                  <div className="inline-flex items-center gap-2 bg-[#2EC4B6] text-[#0B1F3F] px-6 py-3 rounded-lg font-semibold">
                     <span>{t('virtualTour.comingSoon')}</span>
                   </div>
                 </div>
@@ -621,9 +627,9 @@ export default function HatcheryPage() {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center hover:bg-white/20 transition-all"
+                    className="glass-card p-4 text-center"
                   >
-                    <div className="text-accent text-3xl mb-2 flex justify-center">{item.icon}</div>
+                    <div className="text-[#2EC4B6] text-3xl mb-2 flex justify-center">{item.icon}</div>
                     <p className="text-white text-sm">{item.label}</p>
                   </div>
                 ))}
@@ -634,7 +640,7 @@ export default function HatcheryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-secondary via-secondary-600 to-primary">
+      <section className="section-padding bg-[#2EC4B6]">
         <div className="container-custom">
           <motion.div
             initial="hidden"
@@ -650,14 +656,14 @@ export default function HatcheryPage() {
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/contact"
-                className="bg-white text-primary hover:bg-neutral-100 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2"
+                className="bg-[#0B1F3F] text-white hover:bg-[#0B1F3F]/90 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2"
               >
                 {t('cta.scheduleVisit')}
                 <FaArrowRight className="w-4 h-4" />
               </Link>
               <Link
                 href="/innovation"
-                className="bg-primary hover:bg-primary-800 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 border-2 border-white/30"
+                className="bg-white text-[#0B1F3F] hover:bg-white/90 font-semibold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 {t('cta.exploreTechnology')}
               </Link>
